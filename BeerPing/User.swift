@@ -11,12 +11,13 @@ import UIKit
 class User: NSObject {
     
     var name: String!
-    let id: Int = 1
-    var favourites: Array<Any>
+    let id: Int
+    var favourites: Set<Beer>
     
-    init(name: String) {
+    init(name: String, id: Int, favourites: Set<Beer>) {
         self.name = name
-        self.favourites = []
+        self.favourites = favourites
+        self.id = id
     }
     
     func setName(newName: String) {
@@ -32,7 +33,7 @@ class User: NSObject {
         return self.id
     }
     
-    func getFavourites() -> Array<Any> {
+    func getFavourites() -> Set<Beer> {
         return self.favourites
     }
 }

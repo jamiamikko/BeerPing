@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC0733041E94F56A0045DB64 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733031E94F56A0045DB64 /* User.swift */; };
 		BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733051E94F6AD0045DB64 /* Beer.swift */; };
+		BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733071E94FA4D0045DB64 /* Favourites.swift */; };
+		BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733091E94FDC20045DB64 /* BeerList.swift */; };
 		BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */; };
 		BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5D1E924EA800CF0B57 /* ViewController.swift */; };
 		BC784C611E924EA800CF0B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C5F1E924EA800CF0B57 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		BC0733031E94F56A0045DB64 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BC0733051E94F6AD0045DB64 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		BC0733071E94FA4D0045DB64 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
+		BC0733091E94FDC20045DB64 /* BeerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
 		BC784C581E924EA800CF0B57 /* BeerPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC784C5D1E924EA800CF0B57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				BC784C5D1E924EA800CF0B57 /* ViewController.swift */,
 				BC0733031E94F56A0045DB64 /* User.swift */,
 				BC0733051E94F6AD0045DB64 /* Beer.swift */,
+				BC0733071E94FA4D0045DB64 /* Favourites.swift */,
+				BC0733091E94FDC20045DB64 /* BeerList.swift */,
 				BC784C5F1E924EA800CF0B57 /* Main.storyboard */,
 				BC784C621E924EA800CF0B57 /* Assets.xcassets */,
 				BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */,
@@ -205,10 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */,
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
 				BC0733041E94F56A0045DB64 /* User.swift in Sources */,
 				BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */,
+				BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

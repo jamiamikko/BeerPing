@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var downloadButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,12 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func onDownload(_ sender: Any) {
+        
+        print("Clicked on download button")
     }
 
 

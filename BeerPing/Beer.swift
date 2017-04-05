@@ -17,9 +17,9 @@ class Beer: NSObject {
     var type: String
     var price: String
     var ibu: String
-    let id: Int = 1
+    var id: Int
     
-    init(name: String, brewery: String, desc: String, abv: String, type: String, price: String, ibu: String) {
+    init(name: String, brewery: String, desc: String, abv: String, type: String, price: String, ibu: String, id: Int) {
         self.name = name
         self.brewery = brewery
         self.desc = desc
@@ -27,6 +27,7 @@ class Beer: NSObject {
         self.type = type
         self.price = price
         self.ibu = ibu
+        self.id = id
     
     }
     
