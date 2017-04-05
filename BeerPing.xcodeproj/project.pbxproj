@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0733041E94F56A0045DB64 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733031E94F56A0045DB64 /* User.swift */; };
+		BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733051E94F6AD0045DB64 /* Beer.swift */; };
 		BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */; };
 		BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5D1E924EA800CF0B57 /* ViewController.swift */; };
 		BC784C611E924EA800CF0B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C5F1E924EA800CF0B57 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC0733031E94F56A0045DB64 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BC0733051E94F6AD0045DB64 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		BC784C581E924EA800CF0B57 /* BeerPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC784C5D1E924EA800CF0B57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			children = (
 				BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */,
 				BC784C5D1E924EA800CF0B57 /* ViewController.swift */,
+				BC0733031E94F56A0045DB64 /* User.swift */,
+				BC0733051E94F6AD0045DB64 /* Beer.swift */,
 				BC784C5F1E924EA800CF0B57 /* Main.storyboard */,
 				BC784C621E924EA800CF0B57 /* Assets.xcassets */,
 				BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */,
@@ -201,6 +207,8 @@
 			files = (
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
+				BC0733041E94F56A0045DB64 /* User.swift in Sources */,
+				BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +414,7 @@
 				BC784C771E924EA800CF0B57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC784C781E924EA800CF0B57 /* Build configuration list for PBXNativeTarget "BeerPingTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +423,7 @@
 				BC784C7A1E924EA800CF0B57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
