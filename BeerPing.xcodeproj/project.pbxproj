@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC0733041E94F56A0045DB64 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733031E94F56A0045DB64 /* User.swift */; };
 		BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733051E94F6AD0045DB64 /* Beer.swift */; };
 		BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733071E94FA4D0045DB64 /* Favourites.swift */; };
 		BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733091E94FDC20045DB64 /* BeerList.swift */; };
@@ -17,6 +16,10 @@
 		BC784C631E924EA800CF0B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC784C621E924EA800CF0B57 /* Assets.xcassets */; };
 		BC784C661E924EA800CF0B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */; };
 		BC784C711E924EA800CF0B57 /* BeerPingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C701E924EA800CF0B57 /* BeerPingTests.swift */; };
+		BCD7E7E31E9B952100490E66 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E11E9B952100490E66 /* dataModel.xcdatamodeld */; };
+		BCD7E7E61E9B95C500490E66 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E41E9B95C500490E66 /* User+CoreDataClass.swift */; };
+		BCD7E7E71E9B95C500490E66 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E51E9B95C500490E66 /* User+CoreDataProperties.swift */; };
+		BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC0733031E94F56A0045DB64 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BC0733051E94F6AD0045DB64 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		BC0733071E94FA4D0045DB64 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		BC0733091E94FDC20045DB64 /* BeerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
@@ -44,6 +46,10 @@
 		BC784C6C1E924EA800CF0B57 /* BeerPingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C701E924EA800CF0B57 /* BeerPingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPingTests.swift; sourceTree = "<group>"; };
 		BC784C721E924EA800CF0B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCD7E7E21E9B952100490E66 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
+		BCD7E7E41E9B95C500490E66 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCD7E7E51E9B95C500490E66 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,14 +93,16 @@
 			children = (
 				BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */,
 				BC784C5D1E924EA800CF0B57 /* ViewController.swift */,
-				BC0733031E94F56A0045DB64 /* User.swift */,
 				BC0733051E94F6AD0045DB64 /* Beer.swift */,
 				BC0733071E94FA4D0045DB64 /* Favourites.swift */,
+				BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */,
 				BC0733091E94FDC20045DB64 /* BeerList.swift */,
+				BCD7E7E91E9B95DD00490E66 /* Models */,
 				BC784C5F1E924EA800CF0B57 /* Main.storyboard */,
 				BC784C621E924EA800CF0B57 /* Assets.xcassets */,
 				BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */,
 				BC784C671E924EA800CF0B57 /* Info.plist */,
+				BCD7E7E11E9B952100490E66 /* dataModel.xcdatamodeld */,
 			);
 			path = BeerPing;
 			sourceTree = "<group>";
@@ -106,6 +114,15 @@
 				BC784C721E924EA800CF0B57 /* Info.plist */,
 			);
 			path = BeerPingTests;
+			sourceTree = "<group>";
+		};
+		BCD7E7E91E9B95DD00490E66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCD7E7E41E9B95C500490E66 /* User+CoreDataClass.swift */,
+				BCD7E7E51E9B95C500490E66 /* User+CoreDataProperties.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +230,13 @@
 			files = (
 				BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */,
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
+				BCD7E7E71E9B95C500490E66 /* User+CoreDataProperties.swift in Sources */,
+				BCD7E7E31E9B952100490E66 /* dataModel.xcdatamodeld in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
-				BC0733041E94F56A0045DB64 /* User.swift in Sources */,
 				BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */,
+				BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */,
 				BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */,
+				BCD7E7E61E9B95C500490E66 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +454,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCD7E7E11E9B952100490E66 /* dataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCD7E7E21E9B952100490E66 /* dataModel.xcdatamodel */,
+			);
+			currentVersion = BCD7E7E21E9B952100490E66 /* dataModel.xcdatamodel */;
+			path = dataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BC784C501E924EA800CF0B57 /* Project object */;
 }

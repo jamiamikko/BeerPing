@@ -7,14 +7,37 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var downloadButton: UIButton!
+    var numberOfRows: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let fetchRequest:NSFetchRequest<User> = User.fetchRequest()
+        
+        do {
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            
+            
+            print("number of results: \(searchResults.count)")
+            numberOfRows = searchResults.count
+            
+            
+            for result in searchResults as [User] {
+                print("\(result.name!)")
+    
+                
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
