@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  BeerTableViewController.swift
 //  BeerPing
 //
 //  Created by Mikko Jämiä on 11/04/2017.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class BeerTableViewController: UITableViewController {
     
-    var bars:Array<String> = []
-    
+    var beers:Array<String> = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bars = ["Roopen baari :D", "Mikon baari :D", "Oton baari :D"]
+        beers = ["Roopen bisse :D", "Mikon bisse :D", "Oton bisse :D"]
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,33 +29,28 @@ class TableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bars.count
+        return beers.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "TableViewCell"
+        let cellIdentifier = "BeerTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? BeerTableViewCell else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
-    
         
-        cell.barName?.text = bars[indexPath.row]
-
+        
+        cell.beerName?.text = beers[indexPath.row]
+        
         return cell
     }
-    
 
 }
