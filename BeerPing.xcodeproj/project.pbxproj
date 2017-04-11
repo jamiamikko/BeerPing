@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */; };
 		BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733051E94F6AD0045DB64 /* Beer.swift */; };
 		BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733071E94FA4D0045DB64 /* Favourites.swift */; };
 		BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733091E94FDC20045DB64 /* BeerList.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		BC0733051E94F6AD0045DB64 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		BC0733071E94FA4D0045DB64 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		BC0733091E94FDC20045DB64 /* BeerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */,
+				6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */,
 				BC784C5D1E924EA800CF0B57 /* ViewController.swift */,
 				BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */,
 				BC0733051E94F6AD0045DB64 /* Beer.swift */,
@@ -161,7 +164,7 @@
 				TargetAttributes = {
 					BC784C571E924EA800CF0B57 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 3J887N8YUF;
+						DevelopmentTeam = RFM2A4L28R;
 						ProvisioningStyle = Automatic;
 					};
 					BC784C6B1E924EA800CF0B57 = {
@@ -219,6 +222,7 @@
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
 				BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
+				6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */,
 				BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */,
 				BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */,
 				BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */,
@@ -361,8 +365,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3J887N8YUF;
+				DEVELOPMENT_TEAM = RFM2A4L28R;
 				INFOPLIST_FILE = BeerPing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeerBluds.BeerPing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -376,8 +381,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3J887N8YUF;
+				DEVELOPMENT_TEAM = RFM2A4L28R;
 				INFOPLIST_FILE = BeerPing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeerBluds.BeerPing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
