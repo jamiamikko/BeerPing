@@ -16,10 +16,11 @@
 		BC784C631E924EA800CF0B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC784C621E924EA800CF0B57 /* Assets.xcassets */; };
 		BC784C661E924EA800CF0B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */; };
 		BC784C711E924EA800CF0B57 /* BeerPingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C701E924EA800CF0B57 /* BeerPingTests.swift */; };
-		BCD7E7E31E9B952100490E66 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E11E9B952100490E66 /* dataModel.xcdatamodeld */; };
-		BCD7E7E61E9B95C500490E66 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E41E9B95C500490E66 /* User+CoreDataClass.swift */; };
-		BCD7E7E71E9B95C500490E66 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E51E9B95C500490E66 /* User+CoreDataProperties.swift */; };
+		BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */; };
 		BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */; };
+		BCDC64A51E9CB733009F2A06 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC64A41E9CB733009F2A06 /* secondViewController.swift */; };
+		BCE0DD0C1E9BAAD8009066C3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0DD0A1E9BAAD8009066C3 /* User+CoreDataClass.swift */; };
+		BCE0DD0D1E9BAAD8009066C3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0DD0B1E9BAAD8009066C3 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +47,11 @@
 		BC784C6C1E924EA800CF0B57 /* BeerPingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C701E924EA800CF0B57 /* BeerPingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPingTests.swift; sourceTree = "<group>"; };
 		BC784C721E924EA800CF0B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCD7E7E21E9B952100490E66 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
-		BCD7E7E41E9B95C500490E66 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BCD7E7E51E9B95C500490E66 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCD7E7E21E9B952100490E66 /* BeerPing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeerPing.xcdatamodel; sourceTree = "<group>"; };
 		BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		BCDC64A41E9CB733009F2A06 /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
+		BCE0DD0A1E9BAAD8009066C3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCE0DD0B1E9BAAD8009066C3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,16 +95,18 @@
 			children = (
 				BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */,
 				BC784C5D1E924EA800CF0B57 /* ViewController.swift */,
+				BCDC64A41E9CB733009F2A06 /* secondViewController.swift */,
+				BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */,
 				BC0733051E94F6AD0045DB64 /* Beer.swift */,
 				BC0733071E94FA4D0045DB64 /* Favourites.swift */,
-				BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */,
 				BC0733091E94FDC20045DB64 /* BeerList.swift */,
-				BCD7E7E91E9B95DD00490E66 /* Models */,
+				BCE0DD0A1E9BAAD8009066C3 /* User+CoreDataClass.swift */,
+				BCE0DD0B1E9BAAD8009066C3 /* User+CoreDataProperties.swift */,
 				BC784C5F1E924EA800CF0B57 /* Main.storyboard */,
 				BC784C621E924EA800CF0B57 /* Assets.xcassets */,
-				BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */,
 				BC784C671E924EA800CF0B57 /* Info.plist */,
-				BCD7E7E11E9B952100490E66 /* dataModel.xcdatamodeld */,
+				BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */,
+				BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */,
 			);
 			path = BeerPing;
 			sourceTree = "<group>";
@@ -114,15 +118,6 @@
 				BC784C721E924EA800CF0B57 /* Info.plist */,
 			);
 			path = BeerPingTests;
-			sourceTree = "<group>";
-		};
-		BCD7E7E91E9B95DD00490E66 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BCD7E7E41E9B95C500490E66 /* User+CoreDataClass.swift */,
-				BCD7E7E51E9B95C500490E66 /* User+CoreDataProperties.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +170,7 @@
 				TargetAttributes = {
 					BC784C571E924EA800CF0B57 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 3J887N8YUF;
 						ProvisioningStyle = Automatic;
 					};
 					BC784C6B1E924EA800CF0B57 = {
@@ -230,13 +226,14 @@
 			files = (
 				BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */,
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
-				BCD7E7E71E9B95C500490E66 /* User+CoreDataProperties.swift in Sources */,
-				BCD7E7E31E9B952100490E66 /* dataModel.xcdatamodeld in Sources */,
+				BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
 				BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */,
 				BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */,
+				BCE0DD0C1E9BAAD8009066C3 /* User+CoreDataClass.swift in Sources */,
 				BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */,
-				BCD7E7E61E9B95C500490E66 /* User+CoreDataClass.swift in Sources */,
+				BCDC64A51E9CB733009F2A06 /* secondViewController.swift in Sources */,
+				BCE0DD0D1E9BAAD8009066C3 /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -363,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -375,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3J887N8YUF;
 				INFOPLIST_FILE = BeerPing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeerBluds.BeerPing;
@@ -387,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3J887N8YUF;
 				INFOPLIST_FILE = BeerPing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeerBluds.BeerPing;
@@ -456,13 +455,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BCD7E7E11E9B952100490E66 /* dataModel.xcdatamodeld */ = {
+		BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BCD7E7E21E9B952100490E66 /* dataModel.xcdatamodel */,
+				BCD7E7E21E9B952100490E66 /* BeerPing.xcdatamodel */,
 			);
-			currentVersion = BCD7E7E21E9B952100490E66 /* dataModel.xcdatamodel */;
-			path = dataModel.xcdatamodeld;
+			currentVersion = BCD7E7E21E9B952100490E66 /* BeerPing.xcdatamodel */;
+			path = BeerPing.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -12,9 +12,13 @@ import CoreData
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var downloadButton: UIButton!
+    
+    @IBOutlet weak var setNameButton: UIButton!
+    
+    @IBOutlet weak var usernameTextfield: UITextField!
+    
     var numberOfRows: Int = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,34 +27,45 @@ class ViewController: UIViewController {
         
         do {
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
-            
-            
-            print("number of results: \(searchResults.count)")
-            numberOfRows = searchResults.count
-            
-            
+        
             for result in searchResults as [User] {
-                print("\(result.name!)")
-    
-                
+                DatabaseController.getContext().delete(result)
+                DatabaseController.saveContext()
             }
+            
+            if searchResults.count > 0 && (searchResults[0].name != nil) {
+                print("Found a user!")
+            } else {
+                print("Create new user")
+            }
+            
         } catch {
             print("Error: \(error)")
         }
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func onDownload(_ sender: Any) {
+    @IBAction func onSetUsername(_ sender: Any) {
+        if usernameTextfield.text?.isEmpty != nil {
+            
+            let userClassName:String = String(describing: User.self)
+            
+            let user: User = NSEntityDescription.insertNewObject(forEntityName: userClassName, into: DatabaseController.getContext()) as! User
+            
+            user.name = usernameTextfield.text ?? "user"
+            
+            DatabaseController.saveContext()
+            
+            performSegue(withIdentifier: "toSecondView", sender: nil)
+            
+        }
         
-        print("Clicked on download button")
     }
-
-
+    
 }
 
