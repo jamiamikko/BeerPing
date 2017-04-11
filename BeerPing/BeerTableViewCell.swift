@@ -9,8 +9,8 @@
 import UIKit
 
 class BeerTableViewCell: UITableViewCell {
-    @IBOutlet weak var beerName: UILabel!
 
+    @IBOutlet weak var beerName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
