@@ -18,9 +18,6 @@
 		BC784C711E924EA800CF0B57 /* BeerPingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C701E924EA800CF0B57 /* BeerPingTests.swift */; };
 		BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */; };
 		BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */; };
-		BCDC64A51E9CB733009F2A06 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC64A41E9CB733009F2A06 /* secondViewController.swift */; };
-		BCE0DD0C1E9BAAD8009066C3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0DD0A1E9BAAD8009066C3 /* User+CoreDataClass.swift */; };
-		BCE0DD0D1E9BAAD8009066C3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0DD0B1E9BAAD8009066C3 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +46,6 @@
 		BC784C721E924EA800CF0B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD7E7E21E9B952100490E66 /* BeerPing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeerPing.xcdatamodel; sourceTree = "<group>"; };
 		BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
-		BCDC64A41E9CB733009F2A06 /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
-		BCE0DD0A1E9BAAD8009066C3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BCE0DD0B1E9BAAD8009066C3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +89,10 @@
 			children = (
 				BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */,
 				BC784C5D1E924EA800CF0B57 /* ViewController.swift */,
-				BCDC64A41E9CB733009F2A06 /* secondViewController.swift */,
 				BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */,
 				BC0733051E94F6AD0045DB64 /* Beer.swift */,
 				BC0733071E94FA4D0045DB64 /* Favourites.swift */,
 				BC0733091E94FDC20045DB64 /* BeerList.swift */,
-				BCE0DD0A1E9BAAD8009066C3 /* User+CoreDataClass.swift */,
-				BCE0DD0B1E9BAAD8009066C3 /* User+CoreDataProperties.swift */,
 				BC784C5F1E924EA800CF0B57 /* Main.storyboard */,
 				BC784C621E924EA800CF0B57 /* Assets.xcassets */,
 				BC784C671E924EA800CF0B57 /* Info.plist */,
@@ -230,10 +221,7 @@
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
 				BC0733061E94F6AD0045DB64 /* Beer.swift in Sources */,
 				BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */,
-				BCE0DD0C1E9BAAD8009066C3 /* User+CoreDataClass.swift in Sources */,
 				BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */,
-				BCDC64A51E9CB733009F2A06 /* secondViewController.swift in Sources */,
-				BCE0DD0D1E9BAAD8009066C3 /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

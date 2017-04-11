@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,82 +20,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIA-je-dmr">
-                                <rect key="frame" x="0.0" y="408" width="375" height="30"/>
-                                <state key="normal" title="Go"/>
-                                <connections>
-                                    <action selector="onSetUsername:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QoV-LZ-K9G"/>
-                                    <segue destination="U9g-ps-0Vr" kind="show" identifier="toSecondView" id="xZM-xb-HB0"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-OM-VNX">
-                                <rect key="frame" x="0.0" y="316" width="375" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j53-lo-w4l">
-                                <rect key="frame" x="0.0" y="160" width="375" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fIA-je-dmr" secondAttribute="bottom" constant="229" id="1Vn-GK-ZKG"/>
-                            <constraint firstItem="j53-lo-w4l" firstAttribute="leading" secondItem="YXu-OM-VNX" secondAttribute="leading" id="6Sj-KU-VVp"/>
-                            <constraint firstItem="fIA-je-dmr" firstAttribute="top" secondItem="YXu-OM-VNX" secondAttribute="bottom" constant="62" id="EHp-56-TGh"/>
-                            <constraint firstItem="j53-lo-w4l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gdc-Ed-b4R"/>
-                            <constraint firstItem="YXu-OM-VNX" firstAttribute="trailing" secondItem="fIA-je-dmr" secondAttribute="trailing" id="GfP-If-haX"/>
-                            <constraint firstAttribute="trailing" secondItem="j53-lo-w4l" secondAttribute="trailing" id="USR-IH-nG3"/>
-                            <constraint firstItem="YXu-OM-VNX" firstAttribute="leading" secondItem="fIA-je-dmr" secondAttribute="leading" id="YDi-fZ-7Qp"/>
-                            <constraint firstItem="j53-lo-w4l" firstAttribute="trailing" secondItem="YXu-OM-VNX" secondAttribute="trailing" id="t3e-qT-orI"/>
-                            <constraint firstItem="j53-lo-w4l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="140" id="wRG-cD-A7M"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="usernameTextfield" destination="YXu-OM-VNX" id="DzL-kv-yZT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
-        </scene>
-        <!--Second View Controller-->
-        <scene sceneID="iqb-L5-ONb">
-            <objects>
-                <viewController id="U9g-ps-0Vr" customClass="secondViewController" customModule="BeerPing" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mA1-3N-8i9"/>
-                        <viewControllerLayoutGuide type="bottom" id="YA7-wT-Zn5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MLY-89-9e9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm5-3o-Klf">
-                                <rect key="frame" x="16" y="323" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lm5-3o-Klf" firstAttribute="trailing" secondItem="MLY-89-9e9" secondAttribute="trailingMargin" id="55b-2r-ftf"/>
-                            <constraint firstItem="lm5-3o-Klf" firstAttribute="leading" secondItem="MLY-89-9e9" secondAttribute="leadingMargin" id="5mB-QU-aSg"/>
-                            <constraint firstItem="lm5-3o-Klf" firstAttribute="centerY" secondItem="MLY-89-9e9" secondAttribute="centerY" id="ZVL-XO-Z1r"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="usernameLabel" destination="lm5-3o-Klf" id="Mfg-lb-Jof"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aW1-HW-iFL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1064.8" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
