@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Create variable which initializes the appearance of the navigation bar
-        var navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearace = UINavigationBar.appearance()
         
         //Set background color of navigation bar
         navigationBarAppearace.tintColor = uiColorFromHex(rgbValue: 0xFFFFFF)

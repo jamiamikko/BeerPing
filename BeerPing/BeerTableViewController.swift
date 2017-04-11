@@ -15,13 +15,8 @@ class BeerTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        beers = ["Roopen bisse :D", "Mikon bisse :D", "Oton bisse :D"]
+        getBeers()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +46,37 @@ class BeerTableViewController: UITableViewController {
         cell.beerName?.text = beers[indexPath.row]
         
         return cell
+    }
+    
+    func getBeers() {
+        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/williamk.json")
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil
+            {
+                print ("ERROR")
+            }
+            else{
+                if let content = data
+                {
+                    print(content)
+                    do
+                    {
+                        let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
+                        
+                        for result in myJson {
+                            self.beers.append(result["name"] as! String)
+                        }
+                        
+                    }
+                    catch{
+                        print("error")
+                    }
+                }
+            }
+        }
+        task.resume()
+
     }
 
 }
