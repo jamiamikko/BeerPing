@@ -77,9 +77,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcG-rb-Mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698" y="954"/>
+            <point key="canvasLocation" x="2662" y="954"/>
         </scene>
-        <!--View Controller-->
+        <!--Beer Ping-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeerPing" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                             <constraint firstAttribute="trailing" secondItem="txT-Tt-dVa" secondAttribute="trailing" id="XBz-uC-hri"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kcn-TW-uGq"/>
+                    <navigationItem key="navigationItem" title="Beer Ping" id="kcn-TW-uGq"/>
                     <connections>
                         <outlet property="mapView" destination="txT-Tt-dVa" id="wlh-x0-hcF"/>
                     </connections>
