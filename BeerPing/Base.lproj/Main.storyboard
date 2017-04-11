@@ -95,11 +95,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167" y="955"/>
+            <point key="canvasLocation" x="2106" y="884"/>
         </scene>
         <!--Item-->
         <scene sceneID="mtx-Fu-1yx">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uCL-ek-aFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dob-vy-gR2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="K1T-zW-v4c"/>
                     <toolbarItems/>
@@ -112,7 +113,6 @@
                         <segue destination="foX-4a-jjC" kind="relationship" relationship="rootViewController" id="oLv-v7-B4G"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uCL-ek-aFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1167.2" y="138.98050974512745"/>
         </scene>
