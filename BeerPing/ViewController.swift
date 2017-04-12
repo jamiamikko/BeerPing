@@ -31,6 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         
@@ -39,9 +40,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         self.currentLocation2d = userLocation.coordinate
         
-        let region = MKCoordinateRegionMakeWithDistance(userLocation.location!.coordinate, 1000, 1000)
-        mapView.setRegion(region, animated: true)
+        var region = MKCoordinateRegionMakeWithDistance(userLocation.location!.coordinate, 1000, 1000)
         
+        mapView.setRegion(region, animated: true)
         
         let lat: CLLocationDegrees = userLocation.coordinate.latitude
         let lon: CLLocationDegrees = userLocation.coordinate.longitude
