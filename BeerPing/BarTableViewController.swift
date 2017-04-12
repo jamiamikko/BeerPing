@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  BarTableViewController.swift
 //  BeerPing
 //
 //  Created by Mikko Jämiä on 11/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class BarTableViewController: UITableViewController {
     
     var bars:Array<String> = []
     
@@ -45,9 +45,9 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "TableViewCell"
+        let cellIdentifier = "BarTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? BarTableViewCell else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
     

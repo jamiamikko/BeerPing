@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  BarTableViewCell.swift
 //  BeerPing
 //
 //  Created by Mikko Jämiä on 11/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class BarTableViewCell: UITableViewCell {
     @IBOutlet weak var barName: UILabel!
 
     override func awakeFromNib() {
