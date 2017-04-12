@@ -82,7 +82,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC3E48371E9E07C90007A0DB /* Models */ = {
+		BC3E48371E9E07C90007A0DB /* EntityClasses */ = {
 			isa = PBXGroup;
 			children = (
 				BC3E482F1E9E07B80007A0DB /* Bar+CoreDataClass.swift */,
@@ -90,7 +90,7 @@
 				BC3E48311E9E07B80007A0DB /* Beer+CoreDataClass.swift */,
 				BC3E48321E9E07B80007A0DB /* Beer+CoreDataProperties.swift */,
 			);
-			name = Models;
+			name = EntityClasses;
 			sourceTree = "<group>";
 		};
 		BC784C4F1E924EA800CF0B57 = {
@@ -122,7 +122,7 @@
 				BCDC64A81E9CD2CE009F2A06 /* BarTableViewCell.swift */,
 				BCDC64AA1E9CF4A6009F2A06 /* BeerTableViewController.swift */,
 				BCDC64AE1E9CF6FF009F2A06 /* BeerTableViewCell.swift */,
-				BC3E48371E9E07C90007A0DB /* Models */,
+				BC3E48371E9E07C90007A0DB /* EntityClasses */,
 				BC0733071E94FA4D0045DB64 /* Favourites.swift */,
 				BC0733091E94FDC20045DB64 /* BeerList.swift */,
 				BC784C5F1E924EA800CF0B57 /* Main.storyboard */,
