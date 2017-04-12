@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/BeerTableViewController.swift"
-            timestampString = "513606015.904045"
+            timestampString = "513606153.180392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "getBeers()"
             landmarkType = "7">
          </BreakpointContent>
