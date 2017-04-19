@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
 class BeerTableViewController: UITableViewController {
     
     var beers:Array<String> = []
+    var filename: String = "Voeh"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getBeers()
+        let fetchRequest:NSFetchRequest<Beer> = Beer.fetchRequest()
+        
+        do {
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            
+            for result in searchResults as [Beer] {
+                beers.append(result.name!)
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+
         
     }
 
@@ -48,35 +61,5 @@ class BeerTableViewController: UITableViewController {
         return cell
     }
     
-    func getBeers() {
-        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/williamk.json")
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error != nil
-            {
-                print ("ERROR")
-            }
-            else{
-                if let content = data
-                {
-                    print(content)
-                    do
-                    {
-                        let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
-                        
-                        for result in myJson {
-                            self.beers.append(result["name"] as! String)
-                        }
-                        
-                    }
-                    catch{
-                        print("error")
-                    }
-                }
-            }
-        }
-        task.resume()
-
-    }
 
 }

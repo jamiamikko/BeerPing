@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        
         getVersion()
         
         //Create variable which initializes the appearance of the navigation bar
@@ -101,10 +101,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 print("\(result.version)")
                                 
                                 if json["version"] as! Int32 != result.version {
+                                    
+                                    print("Current version is not the same one, fetching.")
                                     result.version = json["version"] as! Int32
+                                    
                                     DatabaseController.saveContext()
+                                    
+                                    print("Saved context")
                                 }
-                                
+                    
                             }
                         } catch {
                             print("Error: \(error)")
@@ -123,8 +128,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func getBars() {
         
-        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/bars.json")
+        let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
         
+        do {
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            
+            for result in searchResults as [Bar] {
+                DatabaseController.getContext().delete(result)
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+        
+        DatabaseController.saveContext()
+        
+        print("Deleted old bars, getting new ones")
+    
+    
+        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/bars.json")
+    
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if error != nil
             {
@@ -140,6 +162,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         for jsonItem in barJson {                            
                             
                             print(jsonItem["name"] ?? "none")
+                            
+                            let barClassName:String = String(describing: Bar.self)
+                            
+                            let bar: Bar = NSEntityDescription.insertNewObject(forEntityName: barClassName, into: DatabaseController.getContext()) as! Bar
+                            
+                            bar.id = jsonItem["id"] as! Int16
+                            bar.name = jsonItem["name"] as? String
+                            bar.filename = jsonItem["filename"] as? String
+                            
+                            if ((jsonItem["filename"] as? String) != nil) {
+                            
+                                self.getBeersForBar(filename: jsonItem["filename"] as! String)
+                            
+                            }
+                            
+                            DatabaseController.saveContext()
                         }
                         
                     }
@@ -152,8 +190,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         task.resume()
         
+        print("Got new bars and saved context")
+        
     }
+    
+    func getBeersForBar(filename: String) {
+        
+        
+        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/\(filename)")
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil
+            {
+                print ("ERROR")
+            }
+            else{
+                if let content = data
+                {
+                    do
+                    {
+                        let beerJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
+                        
+                        for jsonItem in beerJson {
+                            
+                            print(jsonItem["name"] ?? "none")
+                            
+                            let beerClassName:String = String(describing: Beer.self)
+                            
+                            let beer: Beer = NSEntityDescription.insertNewObject(forEntityName: beerClassName, into: DatabaseController.getContext()) as! Beer
+                            
+                            
+                            beer.abv = jsonItem["abv"] as! Float
+                            beer.brewer = jsonItem["brewery"] as? String
+                            beer.desc = jsonItem["description"] as? String
+                            beer.ibu = jsonItem["ibu"] as! Int16
+                            beer.id = jsonItem["id"] as! Int16
+                            beer.name = jsonItem["name"] as? String
+                            beer.price = jsonItem["price"] as? String
+                            beer.type = jsonItem["type"] as? String
+                            
+                            
+                            DatabaseController.saveContext()
 
+                        }
+                        
+                    }
+                        
+                    catch{
+                        print("error")
+                    }
+                }
+            }
+        }
+        task.resume()
+        
+        
+        print("Got new beers for \(filename)")
+    }
 
 }
 

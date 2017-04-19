@@ -16,6 +16,18 @@ class BarTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
+        
+        do {
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            
+            for result in searchResults as [Bar] {
+                bars.append(result.name ?? "voeh")
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +62,6 @@ class BarTableViewController: UITableViewController {
 
         return cell
     }
-    
+
 
 }
