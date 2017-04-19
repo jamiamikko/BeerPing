@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        getVersion()
+        self.getVersion()
         
         //Create variable which initializes the appearance of the navigation bar
         let navigationBarAppearace = UINavigationBar.appearance()
@@ -40,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
-        
         
         return true
     }
@@ -92,28 +90,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         let json = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
                         
                         
-                        let fetchRequest:NSFetchRequest<CurrentVersion> = CurrentVersion.fetchRequest()
                         
-                        do {
-                            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+                        if json["version"] != nil {
+                            let fetchRequest:NSFetchRequest<CurrentVersion> = CurrentVersion.fetchRequest()
                             
-                            for result in searchResults as [CurrentVersion] {
-                                print("\(result.version)")
+                            do {
+                                let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
                                 
-                                if json["version"] as! Int32 != result.version {
+                                if searchResults.count != 0 {
+                                    for result in searchResults as [CurrentVersion] {
                                     
-                                    result.version = json["version"] as! Int32
+                                        print(result.version)
+                                        
+                                        if result.version != json["version"] as! Int32 {
+                                            
+                                            DatabaseController.getContext().delete(result)
+                                            
+                                            let versionClassName:String = String(describing: CurrentVersion.self)
+                                            
+                                            let currentVersion: CurrentVersion = NSEntityDescription.insertNewObject(forEntityName: versionClassName, into: DatabaseController.getContext()) as! CurrentVersion
+                                            
+                                            currentVersion.version = json["version"] as! Int32
+                                            
+                                            DatabaseController.saveContext()
+                                            
+                                            self.getBars()
+
+                                        }
+                                    }
+                                } else {
+                                    let versionClassName:String = String(describing: CurrentVersion.self)
+                                    
+                                    let currentVersion: CurrentVersion = NSEntityDescription.insertNewObject(forEntityName: versionClassName, into: DatabaseController.getContext()) as! CurrentVersion
+                                    
+                                    currentVersion.version = 1
                                     
                                     DatabaseController.saveContext()
                                     
+                                    self.getBars()
                                 }
-                    
+                            } catch {
+                                print("Error: \(error)")
                             }
-                        } catch {
-                            print("Error: \(error)")
+                            
+                            
                         }
                     }
-                        
                     catch{
                         print("error")
                     }
