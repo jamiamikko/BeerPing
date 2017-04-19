@@ -15,17 +15,8 @@ import CoreLocation
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    var currentLocation: CLLocation?
-    var currentLocation2d: CLLocationCoordinate2D?
-    var userLocation: MKUserLocation?
-    var locationManager: CLLocationManager!
-    
-//    lazy var locationManager: CLLocationManager = {
-//        let manager = CLLocationManager()
-//        manager.delegate = self
-//        //manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-//        return manager
-//    }()
+    var locationManager:CLLocationManager = CLLocationManager()
+    var startLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,70 +24,58 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.delegate = self
         mapView.showsUserLocation = true
         annotations()
+        
+        //Configure location manager
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 10.0
+        
+        getFirstLocation()
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        determineMyCurrentLocation()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func determineMyCurrentLocation() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-            //locationManager.startUpdatingHeading()
+        let latestLocation: CLLocation = locations[locations.count - 1]
+        
+        
+        print("user latitude = \(latestLocation.coordinate.latitude)")
+        print("user longitude = \(latestLocation.coordinate.longitude)")
+        
+        if startLocation == nil {
+            startLocation = latestLocation
         }
         
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
+    func locationManager(_ manager: CLLocationManager,
+                         didFailWithError error: Error) {
         
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        
-        // manager.stopUpdatingLocation()
-        
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("Error \(error)")
+    func getFirstLocation () {
+        
+        startLocation = locationManager.location
+        
+        let currentLocation2d = startLocation.coordinate
+        
+        let lat: CLLocationDegrees = startLocation.coordinate.latitude
+        let lon: CLLocationDegrees = startLocation.coordinate.longitude
+        
+        print(currentLocation2d)
+        let region = MKCoordinateRegionMakeWithDistance(currentLocation2d, 400, 400)
+        mapView.setRegion(region, animated: false)
+        
+        
     }
-    
-//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        
-//        print("Success")
-//    }
-//    
-//    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-//        print("Fail")
-//    }
-    
-//    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-//        
-//        //Center the user location on map view
-//        mapView.centerCoordinate = userLocation.location!.coordinate
-//        
-//        let region = MKCoordinateRegionMakeWithDistance(userLocation.location!.coordinate, 1000, 1000)
-//        
-//        mapView.setRegion(region, animated: false)
-//        
-//    }
-    
     
     //Adding annotations to some bars/pubs
     func annotations() {
