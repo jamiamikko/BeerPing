@@ -24,14 +24,4 @@ class Favourites: NSObject {
         favouritesList.insert(newBeer)
     }
     
-    func deleteFavourite(beerId: Int) {
-        
-        for beer in favouritesList {
-            if beer.getId() == beerId {
-                favouritesList.remove(beer)
-            }
-        }
-        
-    }
-
 }
