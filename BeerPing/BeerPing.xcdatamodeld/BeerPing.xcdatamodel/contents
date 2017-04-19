@@ -4,7 +4,7 @@
         <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="bars" inverseEntity="Beer" syncable="YES"/>
+        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="bar" inverseEntity="Beer" syncable="YES"/>
     </entity>
     <entity name="Beer" representedClassName=".Beer" syncable="YES">
         <attribute name="abv" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -15,14 +15,14 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="bars" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bar" inverseName="beers" inverseEntity="Bar" syncable="YES"/>
+        <relationship name="bar" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bar" inverseName="beers" inverseEntity="Bar" syncable="YES"/>
     </entity>
     <entity name="CurrentVersion" representedClassName=".CurrentVersion" syncable="YES">
         <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bar" positionX="-1827" positionY="-1026" width="128" height="103"/>
-        <element name="Beer" positionX="-1532" positionY="-1017" width="128" height="178"/>
+        <element name="Bar" positionX="-1773" positionY="-1035" width="128" height="103"/>
+        <element name="Beer" positionX="-1532" positionY="-1035" width="128" height="178"/>
         <element name="CurrentVersion" positionX="-1809" positionY="-864" width="128" height="58"/>
     </elements>
 </model>

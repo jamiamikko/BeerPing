@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class BeerTableViewController: UITableViewController {
     
     var beers:Array<String> = []
+    var barName: String = "Voeh"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getBeers()
+        
+        let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
+        
+        let filter = barName
+        let predicate = NSPredicate(format: "name = %@", filter)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            
+            for result in searchResults as [Bar] {
+            
+                for beerItem in result.beers! {
+                    beers.append((beerItem as AnyObject).name as String)
+                }
+                
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+
+
         
     }
 
@@ -48,35 +71,14 @@ class BeerTableViewController: UITableViewController {
         return cell
     }
     
-    func getBeers() {
-        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/williamk.json")
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error != nil
-            {
-                print ("ERROR")
-            }
-            else{
-                if let content = data
-                {
-                    print(content)
-                    do
-                    {
-                        let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
-                        
-                        for result in myJson {
-                            self.beers.append(result["name"] as! String)
-                        }
-                        
-                    }
-                    catch{
-                        print("error")
-                    }
-                }
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toBeerDetails" {
+            
+            let destViewController: BeerViewController = segue.destination as! BeerViewController
+            
+            destViewController.beerLabelText = beers[(self.tableView.indexPathForSelectedRow?.row)!]
         }
-        task.resume()
-
     }
+    
 
 }

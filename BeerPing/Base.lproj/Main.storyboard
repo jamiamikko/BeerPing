@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +37,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="barName" destination="evz-Zo-7Rh" id="SDB-Ws-Bc4"/>
-                                    <segue destination="Sce-9F-NBQ" kind="show" id="vEr-Md-pl8"/>
+                                    <segue destination="Sce-9F-NBQ" kind="show" identifier="toBeers" id="vEr-Md-pl8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,6 +79,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="beerName" destination="p8R-yQ-bWX" id="e9t-ig-6HZ"/>
+                                    <segue destination="vYn-Vu-W3b" kind="show" identifier="toBeerDetails" id="Rx6-Do-CQ2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,6 +93,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcG-rb-Mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2661.5999999999999" y="953.97301349325346"/>
+        </scene>
+        <!--Beer View Controller-->
+        <scene sceneID="tDa-My-kfQ">
+            <objects>
+                <viewController id="vYn-Vu-W3b" customClass="BeerViewController" customModule="BeerPing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SKL-oF-CBf"/>
+                        <viewControllerLayoutGuide type="bottom" id="OyN-Dq-G0c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="08T-e8-0my">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ts-tH-yb5">
+                                <rect key="frame" x="16" y="126" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ts-tH-yb5" firstAttribute="trailing" secondItem="08T-e8-0my" secondAttribute="trailingMargin" id="GWV-Xa-TKm"/>
+                            <constraint firstItem="4ts-tH-yb5" firstAttribute="leading" secondItem="08T-e8-0my" secondAttribute="leadingMargin" id="Q8K-Rv-FGf"/>
+                            <constraint firstItem="4ts-tH-yb5" firstAttribute="top" secondItem="SKL-oF-CBf" secondAttribute="bottom" constant="62" id="hNN-eE-g0z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beerName" destination="4ts-tH-yb5" id="6f1-Ow-ceQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S01-mz-cLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.5999999999999" y="953.97301349325346"/>
         </scene>
         <!--Beer Ping-->
         <scene sceneID="tne-QT-ifu">
