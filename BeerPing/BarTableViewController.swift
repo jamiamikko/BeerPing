@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class BarTableViewController: UITableViewController {
     
@@ -15,13 +16,6 @@ class BarTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bars = ["Roopen baari :D", "Mikon baari :D", "Oton baari :D"]
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +42,7 @@ class BarTableViewController: UITableViewController {
         let cellIdentifier = "BarTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? BarTableViewCell else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of BarTableViewCell.")
         }
     
         

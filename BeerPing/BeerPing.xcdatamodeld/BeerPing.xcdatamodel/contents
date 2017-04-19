@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Bar" representedClassName=".Bar" syncable="YES">
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="bars" inverseEntity="Beer" syncable="YES"/>
@@ -16,8 +17,12 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bars" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Bar" inverseName="beers" inverseEntity="Bar" syncable="YES"/>
     </entity>
+    <entity name="CurrentVersion" representedClassName=".CurrentVersion" syncable="YES">
+        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Bar" positionX="-1827" positionY="-1026" width="128" height="88"/>
+        <element name="Bar" positionX="-1827" positionY="-1026" width="128" height="103"/>
         <element name="Beer" positionX="-1532" positionY="-1017" width="128" height="178"/>
+        <element name="CurrentVersion" positionX="-1809" positionY="-864" width="128" height="58"/>
     </elements>
 </model>

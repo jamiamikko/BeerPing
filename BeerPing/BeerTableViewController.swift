@@ -39,7 +39,7 @@ class BeerTableViewController: UITableViewController {
         let cellIdentifier = "BeerTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? BeerTableViewCell else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of BeerTableViewCell.")
         }
         
         

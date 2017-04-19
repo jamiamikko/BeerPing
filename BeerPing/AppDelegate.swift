@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        getVersion()
         
         //Create variable which initializes the appearance of the navigation bar
         let navigationBarAppearace = UINavigationBar.appearance()
@@ -38,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //locationManager = CLLocationManager()
         //locationManager?.requestWhenInUseAuthorization()
+        
         
         return true
     }
@@ -71,6 +74,84 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func getVersion() {
+        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/version.json")
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil
+            {
+                print ("ERROR")
+            }
+            else{
+                if let content = data
+                {
+                    do
+                    {
+                        let json = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
+                        
+                        
+                        let fetchRequest:NSFetchRequest<CurrentVersion> = CurrentVersion.fetchRequest()
+                        
+                        do {
+                            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+                            
+                            for result in searchResults as [CurrentVersion] {
+                                print("\(result.version)")
+                                
+                                if json["version"] as! Int32 != result.version {
+                                    result.version = json["version"] as! Int32
+                                    DatabaseController.saveContext()
+                                }
+                                
+                            }
+                        } catch {
+                            print("Error: \(error)")
+                        }
+                    }
+                        
+                    catch{
+                        print("error")
+                    }
+                }
+            }
+        }
+        task.resume()
+
+    }
+    
+    func getBars() {
+        
+        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/bars.json")
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil
+            {
+                print ("ERROR")
+            }
+            else{
+                if let content = data
+                {
+                    do
+                    {
+                        let barJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
+                        
+                        for jsonItem in barJson {                            
+                            
+                            print(jsonItem["name"] ?? "none")
+                        }
+                        
+                    }
+                        
+                    catch{
+                        print("error")
+                    }
+                }
+            }
+        }
+        task.resume()
+        
     }
 
 
