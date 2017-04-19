@@ -78,6 +78,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="beerName" destination="p8R-yQ-bWX" id="e9t-ig-6HZ"/>
+                                    <segue destination="vYn-Vu-W3b" kind="show" identifier="toBeerDetails" id="Rx6-Do-CQ2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,6 +92,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcG-rb-Mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2661.5999999999999" y="953.97301349325346"/>
+        </scene>
+        <!--Beer View Controller-->
+        <scene sceneID="tDa-My-kfQ">
+            <objects>
+                <viewController id="vYn-Vu-W3b" customClass="BeerViewController" customModule="BeerPing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SKL-oF-CBf"/>
+                        <viewControllerLayoutGuide type="bottom" id="OyN-Dq-G0c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="08T-e8-0my">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ts-tH-yb5">
+                                <rect key="frame" x="16" y="126" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="beerName" destination="4ts-tH-yb5" id="6f1-Ow-ceQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S01-mz-cLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.5999999999999" y="953.97301349325346"/>
         </scene>
         <!--Beer Ping-->
         <scene sceneID="tne-QT-ifu">

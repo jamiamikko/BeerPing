@@ -71,5 +71,14 @@ class BeerTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toBeerDetails" {
+            
+            let destViewController: BeerViewController = segue.destination as! BeerViewController
+            
+            destViewController.beerLabelText = beers[(self.tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+    
 
 }
