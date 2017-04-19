@@ -12,22 +12,29 @@ import CoreData
 class BeerTableViewController: UITableViewController {
     
     var beers:Array<String> = []
-    var filename: String = "Voeh"
+    var barName: String = "Voeh"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetchRequest:NSFetchRequest<Beer> = Beer.fetchRequest()
+        
+        let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
+        
+        let filter = barName
+        let predicate = NSPredicate(format: "name = %@", filter)
+        fetchRequest.predicate = predicate
         
         do {
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
             
-            for result in searchResults as [Beer] {
-                beers.append(result.name!)
+            for result in searchResults as [Bar] {
+                
+                print(result.beers)
             }
         } catch {
             print("Error: \(error)")
         }
+
 
         
     }

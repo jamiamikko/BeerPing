@@ -2,7 +2,7 @@
 //  Bar+CoreDataProperties.swift
 //  BeerPing
 //
-//  Created by Mikko Jämiä on 12/04/2017.
+//  Created by Mikko Jämiä on 19/04/2017.
 //  Copyright © 2017 BeerBluds. All rights reserved.
 //
 
@@ -16,9 +16,9 @@ extension Bar {
         return NSFetchRequest<Bar>(entityName: "Bar")
     }
 
+    @NSManaged public var filename: String?
     @NSManaged public var id: Int16
     @NSManaged public var name: String?
-    @NSManaged public var filename: String?
     @NSManaged public var beers: NSSet?
 
 }

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         getVersion()
         
         //Create variable which initializes the appearance of the navigation bar
@@ -102,7 +102,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 
                                 if json["version"] as! Int32 != result.version {
                                     
-                                    print("Current version is not the same one, fetching.")
                                     result.version = json["version"] as! Int32
                                     
                                     DatabaseController.saveContext()
@@ -141,9 +140,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         DatabaseController.saveContext()
-        
-        print("Deleted old bars, getting new ones")
-    
     
         let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/bars.json")
     
@@ -171,11 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             bar.name = jsonItem["name"] as? String
                             bar.filename = jsonItem["filename"] as? String
                             
-                            if ((jsonItem["filename"] as? String) != nil) {
-                            
-                                self.getBeersForBar(filename: jsonItem["filename"] as! String)
-                            
-                            }
+                            self.getBeersForBar(currentBar: bar)
                             
                             DatabaseController.saveContext()
                         }
@@ -190,14 +182,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         task.resume()
         
-        print("Got new bars and saved context")
         
     }
     
-    func getBeersForBar(filename: String) {
+    func getBeersForBar(currentBar: Bar) {
         
         
-        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/\(filename)")
+        let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/\(currentBar.filename ?? "voeh")")
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if error != nil
@@ -219,7 +210,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
                             let beer: Beer = NSEntityDescription.insertNewObject(forEntityName: beerClassName, into: DatabaseController.getContext()) as! Beer
                             
-                            
                             beer.abv = jsonItem["abv"] as! Float
                             beer.brewer = jsonItem["brewery"] as? String
                             beer.desc = jsonItem["description"] as? String
@@ -229,9 +219,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             beer.price = jsonItem["price"] as? String
                             beer.type = jsonItem["type"] as? String
                             
+                            currentBar.addToBeers(beer)
                             
                             DatabaseController.saveContext()
-
                         }
                         
                     }
@@ -243,10 +233,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         task.resume()
-        
-        
-        print("Got new beers for \(filename)")
-    }
 
+        
+    }
 }
 

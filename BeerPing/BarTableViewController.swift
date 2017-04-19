@@ -23,6 +23,7 @@ class BarTableViewController: UITableViewController {
             
             for result in searchResults as [Bar] {
                 bars.append(result.name ?? "voeh")
+                
             }
         } catch {
             print("Error: \(error)")
@@ -61,6 +62,14 @@ class BarTableViewController: UITableViewController {
         cell.barName?.text = bars[indexPath.row]
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toBeers" {
+            let destViewController: BeerTableViewController = segue.destination as! BeerTableViewController
+            
+            destViewController.barName = bars[(self.tableView.indexPathForSelectedRow?.row)!]
+        }
     }
 
 
