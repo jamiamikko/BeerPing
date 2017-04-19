@@ -28,8 +28,11 @@ class BeerTableViewController: UITableViewController {
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
             
             for result in searchResults as [Bar] {
+            
+                for beerItem in result.beers! {
+                    beers.append((beerItem as AnyObject).name as String)
+                }
                 
-                print(result.beers)
             }
         } catch {
             print("Error: \(error)")

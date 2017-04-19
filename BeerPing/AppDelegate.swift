@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        getBars()
         getVersion()
         
         //Create variable which initializes the appearance of the navigation bar
@@ -106,7 +107,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                     
                                     DatabaseController.saveContext()
                                     
-                                    print("Saved context")
                                 }
                     
                             }
@@ -155,9 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     {
                         let barJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
                         
-                        for jsonItem in barJson {                            
-                            
-                            print(jsonItem["name"] ?? "none")
+                        for jsonItem in barJson {
                             
                             let barClassName:String = String(describing: Bar.self)
                             
@@ -167,9 +165,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             bar.name = jsonItem["name"] as? String
                             bar.filename = jsonItem["filename"] as? String
                             
-                            self.getBeersForBar(currentBar: bar)
-                            
                             DatabaseController.saveContext()
+                            
+                            self.getBeersForBar(currentBar: bar)
+                        
                         }
                         
                     }

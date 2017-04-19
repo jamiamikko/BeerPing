@@ -10,12 +10,12 @@
 		6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */; };
 		BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733071E94FA4D0045DB64 /* Favourites.swift */; };
 		BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0733091E94FDC20045DB64 /* BeerList.swift */; };
-		BC44F5871EA753A000F20AB0 /* CurrentVersion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5811EA753A000F20AB0 /* CurrentVersion+CoreDataClass.swift */; };
-		BC44F5881EA753A000F20AB0 /* CurrentVersion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5821EA753A000F20AB0 /* CurrentVersion+CoreDataProperties.swift */; };
-		BC44F5891EA753A000F20AB0 /* Bar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5831EA753A000F20AB0 /* Bar+CoreDataClass.swift */; };
-		BC44F58A1EA753A000F20AB0 /* Bar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5841EA753A000F20AB0 /* Bar+CoreDataProperties.swift */; };
-		BC44F58B1EA753A000F20AB0 /* Beer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5851EA753A000F20AB0 /* Beer+CoreDataClass.swift */; };
-		BC44F58C1EA753A000F20AB0 /* Beer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5861EA753A000F20AB0 /* Beer+CoreDataProperties.swift */; };
+		BC44F5AB1EA7657600F20AB0 /* Bar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5A51EA7657600F20AB0 /* Bar+CoreDataClass.swift */; };
+		BC44F5AC1EA7657600F20AB0 /* Bar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5A61EA7657600F20AB0 /* Bar+CoreDataProperties.swift */; };
+		BC44F5AD1EA7657600F20AB0 /* Beer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5A71EA7657600F20AB0 /* Beer+CoreDataClass.swift */; };
+		BC44F5AE1EA7657600F20AB0 /* Beer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5A81EA7657600F20AB0 /* Beer+CoreDataProperties.swift */; };
+		BC44F5AF1EA7657600F20AB0 /* CurrentVersion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5A91EA7657600F20AB0 /* CurrentVersion+CoreDataClass.swift */; };
+		BC44F5B01EA7657600F20AB0 /* CurrentVersion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5AA1EA7657600F20AB0 /* CurrentVersion+CoreDataProperties.swift */; };
 		BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */; };
 		BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5D1E924EA800CF0B57 /* ViewController.swift */; };
 		BC784C611E924EA800CF0B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C5F1E924EA800CF0B57 /* Main.storyboard */; };
@@ -44,12 +44,12 @@
 		6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		BC0733071E94FA4D0045DB64 /* Favourites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		BC0733091E94FDC20045DB64 /* BeerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
-		BC44F5811EA753A000F20AB0 /* CurrentVersion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataClass.swift"; path = "BeerPingModels/CurrentVersion+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		BC44F5821EA753A000F20AB0 /* CurrentVersion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataProperties.swift"; path = "BeerPingModels/CurrentVersion+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		BC44F5831EA753A000F20AB0 /* Bar+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataClass.swift"; path = "BeerPingModels/Bar+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		BC44F5841EA753A000F20AB0 /* Bar+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataProperties.swift"; path = "BeerPingModels/Bar+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		BC44F5851EA753A000F20AB0 /* Beer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataClass.swift"; path = "BeerPingModels/Beer+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		BC44F5861EA753A000F20AB0 /* Beer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataProperties.swift"; path = "BeerPingModels/Beer+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BC44F5A51EA7657600F20AB0 /* Bar+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataClass.swift"; path = "BeerPingModels/Bar+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BC44F5A61EA7657600F20AB0 /* Bar+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataProperties.swift"; path = "BeerPingModels/Bar+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BC44F5A71EA7657600F20AB0 /* Beer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataClass.swift"; path = "BeerPingModels/Beer+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BC44F5A81EA7657600F20AB0 /* Beer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataProperties.swift"; path = "BeerPingModels/Beer+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		BC44F5A91EA7657600F20AB0 /* CurrentVersion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataClass.swift"; path = "BeerPingModels/CurrentVersion+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		BC44F5AA1EA7657600F20AB0 /* CurrentVersion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataProperties.swift"; path = "BeerPingModels/CurrentVersion+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BC784C581E924EA800CF0B57 /* BeerPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC784C5D1E924EA800CF0B57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,12 +89,12 @@
 		BC3E48371E9E07C90007A0DB /* EntityClasses */ = {
 			isa = PBXGroup;
 			children = (
-				BC44F5811EA753A000F20AB0 /* CurrentVersion+CoreDataClass.swift */,
-				BC44F5821EA753A000F20AB0 /* CurrentVersion+CoreDataProperties.swift */,
-				BC44F5831EA753A000F20AB0 /* Bar+CoreDataClass.swift */,
-				BC44F5841EA753A000F20AB0 /* Bar+CoreDataProperties.swift */,
-				BC44F5851EA753A000F20AB0 /* Beer+CoreDataClass.swift */,
-				BC44F5861EA753A000F20AB0 /* Beer+CoreDataProperties.swift */,
+				BC44F5A51EA7657600F20AB0 /* Bar+CoreDataClass.swift */,
+				BC44F5A61EA7657600F20AB0 /* Bar+CoreDataProperties.swift */,
+				BC44F5A71EA7657600F20AB0 /* Beer+CoreDataClass.swift */,
+				BC44F5A81EA7657600F20AB0 /* Beer+CoreDataProperties.swift */,
+				BC44F5A91EA7657600F20AB0 /* CurrentVersion+CoreDataClass.swift */,
+				BC44F5AA1EA7657600F20AB0 /* CurrentVersion+CoreDataProperties.swift */,
 			);
 			name = EntityClasses;
 			sourceTree = "<group>";
@@ -253,22 +253,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC44F5AE1EA7657600F20AB0 /* Beer+CoreDataProperties.swift in Sources */,
 				BC0733081E94FA4D0045DB64 /* Favourites.swift in Sources */,
-				BC44F58A1EA753A000F20AB0 /* Bar+CoreDataProperties.swift in Sources */,
-				BC44F5881EA753A000F20AB0 /* CurrentVersion+CoreDataProperties.swift in Sources */,
+				BC44F5AF1EA7657600F20AB0 /* CurrentVersion+CoreDataClass.swift in Sources */,
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
-				BC44F5871EA753A000F20AB0 /* CurrentVersion+CoreDataClass.swift in Sources */,
-				BC44F58B1EA753A000F20AB0 /* Beer+CoreDataClass.swift in Sources */,
+				BC44F5B01EA7657600F20AB0 /* CurrentVersion+CoreDataProperties.swift in Sources */,
 				BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */,
+				BC44F5AD1EA7657600F20AB0 /* Beer+CoreDataClass.swift in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
 				6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */,
 				BCDC64A91E9CD2CE009F2A06 /* BarTableViewCell.swift in Sources */,
 				BCDC64AF1E9CF6FF009F2A06 /* BeerTableViewCell.swift in Sources */,
+				BC44F5AB1EA7657600F20AB0 /* Bar+CoreDataClass.swift in Sources */,
 				BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */,
 				BCDC64A71E9CD140009F2A06 /* BarTableViewController.swift in Sources */,
-				BC44F5891EA753A000F20AB0 /* Bar+CoreDataClass.swift in Sources */,
 				BC07330A1E94FDC20045DB64 /* BeerList.swift in Sources */,
-				BC44F58C1EA753A000F20AB0 /* Beer+CoreDataProperties.swift in Sources */,
+				BC44F5AC1EA7657600F20AB0 /* Bar+CoreDataProperties.swift in Sources */,
 				BCDC64AB1E9CF4A6009F2A06 /* BeerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
