@@ -11,13 +11,16 @@ import UIKit
 import MapKit
 
 class Annotation: NSObject, MKAnnotation {
+ 
     var title: String?
     var coordinate: CLLocationCoordinate2D
+    var subtitle: String?
     
     
-    init(title: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, coordinate: CLLocationCoordinate2D, subtitle: String) {
         self.title = title
         self.coordinate = coordinate
+        self.subtitle = subtitle
     }
     
 }
