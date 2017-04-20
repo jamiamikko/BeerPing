@@ -80,9 +80,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     //Adding annotations to some bars/pubs
     func annotations() {
         
-        let williamK = Annotation(title: "William K, Sello", coordinate: CLLocationCoordinate2D(latitude: 60.2181479, longitude: 24.8070826), subtitle: "Leppävaara, Espoo")
+        let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
         
-        mapView.addAnnotation(williamK)
+        do {
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            
+            for result in searchResults as [Bar] {
+                
+                let pin = Annotation(title: result.name!, coordinate: CLLocationCoordinate2D(latitude: result.latitude, longitude:
+                result.longitude), subtitle: result.location!)
+                
+                mapView.addAnnotation(pin)
+                
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+        
+        
         
     }
 }

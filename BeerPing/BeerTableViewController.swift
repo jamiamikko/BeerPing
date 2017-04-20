@@ -35,6 +35,7 @@ class BeerTableViewController: UITableViewController {
                     beerList.append(beerItem as! Beer)
                 }
                 
+
             }
         } catch {
             print("Error: \(error)")

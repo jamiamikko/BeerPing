@@ -32,8 +32,8 @@ class BeerViewController: UIViewController {
         brewery.text = brewery.text! + filteredBeers[0].brewer!
         type.text = filteredBeers[0].type
         beerDescription.text = beerDescription.text! + "\n" + filteredBeers[0].desc!
-        abv.text = String(filteredBeers[0].abv)
-        ibu.text = String(filteredBeers[0].ibu)
+        abv.text = abv.text! + String(filteredBeers[0].abv)
+        ibu.text = ibu.text! + String(filteredBeers[0].ibu)
         
         // Do any additional setup after loading the view.
     }

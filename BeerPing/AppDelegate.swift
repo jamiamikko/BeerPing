@@ -186,6 +186,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             bar.id = jsonItem["id"] as! Int16
                             bar.name = jsonItem["name"] as? String
                             bar.filename = jsonItem["filename"] as? String
+                            bar.latitude = jsonItem["latitude"] as! Double
+                            bar.longitude = jsonItem["longitude"] as! Double
+                            bar.location = jsonItem["location"] as? String
                             
                             DatabaseController.saveContext()
                             
