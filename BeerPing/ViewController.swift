@@ -36,6 +36,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        annotations()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
