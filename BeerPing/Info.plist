@@ -45,5 +45,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>Privacy - Location When In Use</key>
+	<string>Voeh</string>
 </dict>
 </plist>

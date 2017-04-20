@@ -11,7 +11,6 @@ import CoreData
 
 class BeerTableViewController: UITableViewController {
     
-    var beers:Array<String> = []
     var beerList:Array <Beer> = []
     var barName: String = "Voeh"
 
@@ -31,7 +30,6 @@ class BeerTableViewController: UITableViewController {
             for result in searchResults as [Bar] {
             
                 for beerItem in result.beers! {
-                    beers.append((beerItem as AnyObject).name as String)
                     beerList.append(beerItem as! Beer)
                 }
                 
@@ -55,7 +53,7 @@ class BeerTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return beers.count
+        return beerList.count
     }
     
     
@@ -69,7 +67,7 @@ class BeerTableViewController: UITableViewController {
         }
         
         
-        cell.beerName?.text = beers[indexPath.row]
+        cell.beerName?.text = beerList[indexPath.row].name
         
         return cell
     }
@@ -79,7 +77,7 @@ class BeerTableViewController: UITableViewController {
             
             let destViewController: BeerViewController = segue.destination as! BeerViewController
             
-            destViewController.beerLabelText = beers[(self.tableView.indexPathForSelectedRow?.row)!]
+            destViewController.beerLabelText = beerList[(self.tableView.indexPathForSelectedRow?.row)!].name!
             destViewController.beerList = beerList
         }
     }

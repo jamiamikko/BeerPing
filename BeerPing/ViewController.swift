@@ -23,7 +23,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
         mapView.showsUserLocation = true
-        annotations()
         
         //Configure location manager
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -34,6 +33,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         getFirstLocation()
 
+        
     }
     
     

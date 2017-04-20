@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-//import CoreLocation
+import CoreTelephony
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -96,6 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             let fetchRequest:NSFetchRequest<CurrentVersion> = CurrentVersion.fetchRequest()
                             
                             do {
+                                
                                 let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
                                 
                                 if searchResults.count != 0 {
@@ -189,6 +191,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             bar.latitude = jsonItem["latitude"] as! Double
                             bar.longitude = jsonItem["longitude"] as! Double
                             bar.location = jsonItem["location"] as? String
+                            
                             
                             DatabaseController.saveContext()
                             
