@@ -12,6 +12,7 @@ import CoreData
 class BeerTableViewController: UITableViewController {
     
     var beers:Array<String> = []
+    var beerList:Array <Beer> = []
     var barName: String = "Voeh"
 
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class BeerTableViewController: UITableViewController {
             
                 for beerItem in result.beers! {
                     beers.append((beerItem as AnyObject).name as String)
+                    beerList.append(beerItem as! Beer)
                 }
                 
             }
@@ -77,6 +79,7 @@ class BeerTableViewController: UITableViewController {
             let destViewController: BeerViewController = segue.destination as! BeerViewController
             
             destViewController.beerLabelText = beers[(self.tableView.indexPathForSelectedRow?.row)!]
+            destViewController.beerList = beerList
         }
     }
     
