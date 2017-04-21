@@ -145,6 +145,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             destViewController.barName = String(describing: sender!)
             print(sender!)
             
+
+            print(sender ?? "voej")
+
         }
     }
 
