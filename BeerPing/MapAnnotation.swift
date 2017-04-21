@@ -15,7 +15,7 @@ class Annotation: NSObject, MKAnnotation {
     var title: String?
     var coordinate: CLLocationCoordinate2D
     var subtitle: String?
-    
+    var pinCustomImage:UIImage!
     
     init(title: String, coordinate: CLLocationCoordinate2D, subtitle: String) {
         self.title = title

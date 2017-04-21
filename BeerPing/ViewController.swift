@@ -101,6 +101,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
     
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let identifier = "Annotation"
@@ -108,6 +110,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if annotation is Annotation {
             if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
                 annotationView.annotation = annotation
+                annotationView.image = UIImage(named: "cap-filled")
                 return annotationView
             } else {
                 let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
@@ -116,6 +119,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 
                 let btn = UIButton(type: .detailDisclosure)
                 annotationView.rightCalloutAccessoryView = btn
+                
+                
                 return annotationView
             }
         }
@@ -125,8 +130,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
+        let annotation = view.annotation as? Annotation
+        
         if control == view.rightCalloutAccessoryView {
-            performSegue(withIdentifier: "fromMapToBeers", sender: self)
+            performSegue(withIdentifier: "fromMapToBeers", sender: annotation?.title)
         }
         
     }
@@ -135,9 +142,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if segue.identifier == "fromMapToBeers" {
             let destViewController: BeerTableViewController = segue.destination as! BeerTableViewController
             
-            print(sender)
+            destViewController.barName = String(describing: sender!)
+            print(sender!)
+            
         }
     }
+
 }
 
 
