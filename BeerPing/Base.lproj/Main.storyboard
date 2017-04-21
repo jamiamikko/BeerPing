@@ -37,14 +37,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="evz-Zo-7Rh" firstAttribute="leading" secondItem="skn-RI-BIF" secondAttribute="leading" id="7er-xN-6CI"/>
+                                                <constraint firstItem="evz-Zo-7Rh" firstAttribute="leading" secondItem="skn-RI-BIF" secondAttribute="leadingMargin" id="2ma-Em-pi8"/>
+                                                <constraint firstItem="evz-Zo-7Rh" firstAttribute="top" secondItem="skn-RI-BIF" secondAttribute="topMargin" id="VA4-d9-eOu"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="skn-RI-BIF" secondAttribute="trailing" id="Hkb-wI-Bfi"/>
-                                        <constraint firstItem="skn-RI-BIF" firstAttribute="leading" secondItem="qre-tJ-oEr" secondAttribute="leadingMargin" id="h78-Lg-MJ1"/>
-                                        <constraint firstItem="skn-RI-BIF" firstAttribute="top" secondItem="qre-tJ-oEr" secondAttribute="topMargin" id="rV1-o1-6Gr"/>
+                                        <constraint firstItem="skn-RI-BIF" firstAttribute="top" secondItem="qre-tJ-oEr" secondAttribute="topMargin" id="Fqh-5H-npY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="skn-RI-BIF" secondAttribute="trailing" id="pyd-nZ-tVv"/>
+                                        <constraint firstItem="skn-RI-BIF" firstAttribute="leading" secondItem="qre-tJ-oEr" secondAttribute="leadingMargin" id="sSt-G1-kpI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -91,17 +92,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="p8R-yQ-bWX" firstAttribute="leading" secondItem="083-6D-uyb" secondAttribute="leading" id="Tti-gc-9Y0"/>
+                                                <constraint firstItem="p8R-yQ-bWX" firstAttribute="top" secondItem="083-6D-uyb" secondAttribute="topMargin" id="doz-zV-xNT"/>
+                                                <constraint firstItem="p8R-yQ-bWX" firstAttribute="leading" secondItem="083-6D-uyb" secondAttribute="leadingMargin" id="yAZ-4d-BWg"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="083-6D-uyb" firstAttribute="trailing" secondItem="abk-Sl-9S2" secondAttribute="trailingMargin" id="0wH-8U-NYs"/>
-                                        <constraint firstItem="083-6D-uyb" firstAttribute="top" secondItem="abk-Sl-9S2" secondAttribute="topMargin" constant="20" id="LaS-F4-cgM"/>
-                                        <constraint firstItem="083-6D-uyb" firstAttribute="top" secondItem="abk-Sl-9S2" secondAttribute="topMargin" id="OpE-mL-heJ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="083-6D-uyb" secondAttribute="trailing" id="Wvr-Hh-Opo"/>
-                                        <constraint firstItem="083-6D-uyb" firstAttribute="leading" secondItem="abk-Sl-9S2" secondAttribute="leadingMargin" id="Xxo-zX-o6Y"/>
-                                        <constraint firstItem="083-6D-uyb" firstAttribute="leading" secondItem="abk-Sl-9S2" secondAttribute="leadingMargin" id="oye-SL-ius"/>
+                                        <constraint firstItem="083-6D-uyb" firstAttribute="leading" secondItem="abk-Sl-9S2" secondAttribute="leadingMargin" id="RTa-Zz-kUV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="083-6D-uyb" secondAttribute="trailing" id="fBc-9E-3eO"/>
+                                        <constraint firstItem="083-6D-uyb" firstAttribute="top" secondItem="abk-Sl-9S2" secondAttribute="topMargin" id="x9v-xe-QnO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -234,6 +233,7 @@
                     <navigationItem key="navigationItem" title="Beer Ping" id="kcn-TW-uGq"/>
                     <connections>
                         <outlet property="mapView" destination="txT-Tt-dVa" id="wlh-x0-hcF"/>
+                        <segue destination="Sce-9F-NBQ" kind="show" identifier="fromMapToBeers" id="ALz-Yi-zfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -304,4 +304,7 @@
         <image name="map-empty" width="25" height="25"/>
         <image name="map-filled" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ALz-Yi-zfC"/>
+    </inferredMetricsTieBreakers>
 </document>
