@@ -17,6 +17,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var mapView: MKMapView!
     var locationManager:CLLocationManager = CLLocationManager()
     var startLocation: CLLocation!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,32 +102,53 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
     
-    
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        let identifier = "Annotation"
-        
-        if annotation is Annotation {
-            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
-                annotationView.annotation = annotation
-                annotationView.image = UIImage(named: "cap-filled")
-                return annotationView
-            } else {
-                let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
-                annotationView.isEnabled = true
-                annotationView.canShowCallout = true
-                
-                let btn = UIButton(type: .detailDisclosure)
-                annotationView.rightCalloutAccessoryView = btn
-                
-                
-                return annotationView
-            }
+        if annotation is MKUserLocation {
+            return nil
         }
-        
-        return nil
+
+        let reuseId = "pin"
+
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+
+        if pinView == nil {
+            pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.image = UIImage(named: "bar-pointer.png")
+            pinView!.canShowCallout = true
+            let btn = UIButton(type: .detailDisclosure)
+            pinView?.rightCalloutAccessoryView = btn
+        }
+        else {
+            pinView!.annotation = annotation
+        }
+        return pinView
     }
+    
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        
+//        let identifier = "Annotation"
+//        
+//        if annotation is Annotation {
+//            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
+//                annotationView.annotation = annotation
+//                return annotationView
+//            } else {
+//                let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
+//                annotationView.isEnabled = true
+//                annotationView.canShowCallout = true
+//                annotationView.image = UIImage(named: "cap-filled")
+//                
+//                let btn = UIButton(type: .detailDisclosure)
+//                annotationView.rightCalloutAccessoryView = btn
+//                
+//                
+//                return annotationView
+//            }
+//        }
+//        
+//        return nil
+//    }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
