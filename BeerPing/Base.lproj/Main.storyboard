@@ -222,62 +222,6 @@
             </objects>
             <point key="canvasLocation" x="3597.5999999999999" y="953.97301349325346"/>
         </scene>
-        <!--TESTI-->
-        <scene sceneID="CGM-eJ-tez">
-            <objects>
-                <viewController id="R4U-0I-jAh" customClass="BeerTableViewTest" customModule="BeerPing" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JKh-Vh-OAS"/>
-                        <viewControllerLayoutGuide type="bottom" id="Lsb-Pk-oqw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="btl-oD-ZtR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Un-nn-ko6">
-                                <rect key="frame" x="20" y="85" width="374" height="29"/>
-                                <segments>
-                                    <segment title="Suggested"/>
-                                    <segment title="On Tap"/>
-                                    <segment title="Bottles"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0xP-kX-IDo">
-                                <rect key="frame" x="0.0" y="121" width="414" height="615"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HO6-hP-lcJ" customClass="BeerTableViewCell" customModule="BeerPing" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HO6-hP-lcJ" id="ylL-Nx-OCo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0xP-kX-IDo" firstAttribute="top" secondItem="2Un-nn-ko6" secondAttribute="bottom" constant="8" id="ICL-48-Kby"/>
-                            <constraint firstItem="0xP-kX-IDo" firstAttribute="leading" secondItem="btl-oD-ZtR" secondAttribute="leading" id="N9M-hi-L7P"/>
-                            <constraint firstAttribute="trailing" secondItem="0xP-kX-IDo" secondAttribute="trailing" id="Szr-NV-min"/>
-                            <constraint firstItem="2Un-nn-ko6" firstAttribute="top" secondItem="JKh-Vh-OAS" secondAttribute="bottom" constant="21" id="g1Z-Gf-A9T"/>
-                            <constraint firstItem="Lsb-Pk-oqw" firstAttribute="top" secondItem="0xP-kX-IDo" secondAttribute="bottom" id="hAF-q9-zkO"/>
-                            <constraint firstItem="2Un-nn-ko6" firstAttribute="leading" secondItem="btl-oD-ZtR" secondAttribute="leadingMargin" id="jHK-Nb-a1F"/>
-                            <constraint firstItem="2Un-nn-ko6" firstAttribute="trailing" secondItem="btl-oD-ZtR" secondAttribute="trailingMargin" id="oEc-rP-2aZ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="TESTI" id="53a-Eb-86E"/>
-                    <connections>
-                        <outlet property="beerTableView" destination="0xP-kX-IDo" id="2Uc-1y-nPW"/>
-                        <outlet property="segmentedCtrl" destination="2Un-nn-ko6" id="q3O-hn-JS7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cD0-HF-dSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5348" y="1644.8275862068967"/>
-        </scene>
         <!--Beer Ping-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -385,24 +329,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTF-pY-RvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757.60000000000002" y="1683.5082458770617"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="OpZ-7R-WWJ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4T3-vk-hUi" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TVH-xk-h8b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="R4U-0I-jAh" kind="relationship" relationship="rootViewController" id="crl-DD-aVr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rc0-rl-GI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4414" y="1645"/>
         </scene>
     </scenes>
     <resources>
