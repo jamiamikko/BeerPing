@@ -11,13 +11,17 @@ import CoreData
 
 class BeerTableViewController: UITableViewController {
     
-    @IBOutlet weak var segmentedController: UISegmentedControl!
+    //@IBOutlet weak var segmentedController: UISegmentedControl!
     var barName: String!
     @IBOutlet var beerTable: UITableView!
     var fetchedResultsController = NSFetchedResultsController<Beer>()
+    @IBOutlet weak var segmentedController: UISegmentedControl!
+    @IBOutlet weak var barTitle: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.barTitle.title = barName
         
         let fetchRequest = NSFetchRequest<Beer>(entityName: "Beer")
 
@@ -108,12 +112,16 @@ class BeerTableViewController: UITableViewController {
         
     }
     
+//    @IBAction func valueChanged(_ sender: UISegmentedControl) {
+//        
+//        filterBeers()
+//        beerTable.reloadData()
+//    }
+    
     @IBAction func valueChanged(_ sender: UISegmentedControl) {
-        
         filterBeers()
         beerTable.reloadData()
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toBeerDetails" {

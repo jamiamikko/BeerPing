@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zml-R6-aWv" id="qre-tJ-oEr">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="skn-RI-BIF">
@@ -63,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOP-ZY-15Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696.8" y="953.97301349325346"/>
+            <point key="canvasLocation" x="1695.6521739130435" y="953.804347826087"/>
         </scene>
         <!--Beers-->
         <scene sceneID="SBg-JS-ntU">
@@ -73,21 +73,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="0os-43-iqW">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="u3Y-nR-u7r">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Suggested"/>
-                                <segment title="On Tap"/>
-                                <segment title="Bottles"/>
-                            </segments>
-                            <connections>
-                                <action selector="valueChanged:" destination="Sce-9F-NBQ" eventType="valueChanged" id="jba-hA-7FH"/>
-                            </connections>
-                        </segmentedControl>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OgS-kl-JDc">
+                                    <rect key="frame" x="8" y="18" width="398" height="29"/>
+                                    <segments>
+                                        <segment title="Recommended"/>
+                                        <segment title="On tap"/>
+                                        <segment title="Bottles"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="valueChanged:" destination="Sce-9F-NBQ" eventType="valueChanged" id="J50-WU-3RX"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="OgS-kl-JDc" firstAttribute="top" secondItem="u3Y-nR-u7r" secondAttribute="top" constant="20" id="UPl-L9-fKG"/>
+                                <constraint firstAttribute="bottom" secondItem="OgS-kl-JDc" secondAttribute="bottom" constant="20" id="lUR-3F-UUc"/>
+                                <constraint firstAttribute="trailing" secondItem="OgS-kl-JDc" secondAttribute="trailing" constant="8" id="zBF-4z-aUQ"/>
+                                <constraint firstItem="OgS-kl-JDc" firstAttribute="leading" secondItem="u3Y-nR-u7r" secondAttribute="leading" constant="8" id="zZx-b2-ITf"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeerTableViewCell" id="fId-4I-vIe" customClass="BeerTableViewCell" customModule="BeerPing" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fId-4I-vIe" id="abk-Sl-9S2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -128,13 +140,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Beers" id="poR-XF-hlZ"/>
                     <connections>
+                        <outlet property="barTitle" destination="poR-XF-hlZ" id="Rdt-ME-FO8"/>
                         <outlet property="beerTable" destination="3s1-cA-Ddc" id="QUY-hq-K43"/>
-                        <outlet property="segmentedController" destination="0os-43-iqW" id="eHH-o6-id6"/>
+                        <outlet property="segmentedController" destination="OgS-kl-JDc" id="aYr-Ou-e19"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcG-rb-Mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2661.5999999999999" y="953.97301349325346"/>
+            <point key="canvasLocation" x="2660.8695652173915" y="953.804347826087"/>
         </scene>
         <!--Beer View Controller-->
         <scene sceneID="tDa-My-kfQ">
