@@ -71,13 +71,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let currentLocation2d = startLocation.coordinate
         
-        let lat: CLLocationDegrees = startLocation.coordinate.latitude
-        let lon: CLLocationDegrees = startLocation.coordinate.longitude
-        
         print(currentLocation2d)
-        let region = MKCoordinateRegionMakeWithDistance(currentLocation2d, 400, 400)
-        mapView.setRegion(region, animated: false)
         
+        let region = MKCoordinateRegionMakeWithDistance(currentLocation2d, 400, 400)
+        
+        mapView.setRegion(region, animated: false)
         
     }
     
@@ -125,30 +123,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return pinView
     }
     
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        
-//        let identifier = "Annotation"
-//        
-//        if annotation is Annotation {
-//            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
-//                annotationView.annotation = annotation
-//                return annotationView
-//            } else {
-//                let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
-//                annotationView.isEnabled = true
-//                annotationView.canShowCallout = true
-//                annotationView.image = UIImage(named: "cap-filled")
-//                
-//                let btn = UIButton(type: .detailDisclosure)
-//                annotationView.rightCalloutAccessoryView = btn
-//                
-//                
-//                return annotationView
-//            }
-//        }
-//        
-//        return nil
-//    }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
@@ -173,6 +147,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
 
+    @IBAction func backToUser(_ sender: UIButton) {
+
+        getFirstLocation()
+        
+    }
 }
 
 

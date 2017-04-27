@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.getVersion()
         
-        
         //Create variable which initializes the appearance of the navigation bar
         let navigationBarAppearace = UINavigationBar.appearance()
         
@@ -247,6 +246,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             beer.name = jsonItem["name"] as? String
                             beer.price = jsonItem["price"] as? String
                             beer.type = jsonItem["type"] as? String
+                            beer.recommended = jsonItem["recommended"] as! Bool
                             
                             currentBar.addToBeers(beer)
                             

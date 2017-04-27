@@ -11,7 +11,7 @@ import CoreData
 
 class BarTableViewController: UITableViewController {
     
-    var bars:Array<String> = []
+    var bars:Array<Bar> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class BarTableViewController: UITableViewController {
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
             
             for result in searchResults as [Bar] {
-                bars.append(result.name ?? "voeh")
+                bars.append(result)
                 
             }
         } catch {
@@ -59,7 +59,7 @@ class BarTableViewController: UITableViewController {
         }
     
         
-        cell.barName?.text = bars[indexPath.row]
+        cell.barName?.text = bars[indexPath.row].name
 
         return cell
     }
@@ -68,7 +68,7 @@ class BarTableViewController: UITableViewController {
         if segue.identifier == "toBeers" {
             let destViewController: BeerTableViewController = segue.destination as! BeerTableViewController
             
-            destViewController.barName = bars[(self.tableView.indexPathForSelectedRow?.row)!]
+            destViewController.barName = bars[(self.tableView.indexPathForSelectedRow?.row)!].name
         }
     }
 
