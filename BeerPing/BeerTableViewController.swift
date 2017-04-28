@@ -11,7 +11,6 @@ import CoreData
 
 class BeerTableViewController: UITableViewController {
     
-    //@IBOutlet weak var segmentedController: UISegmentedControl!
     var barName: String!
     @IBOutlet var beerTable: UITableView!
     var fetchedResultsController = NSFetchedResultsController<Beer>()
@@ -58,7 +57,6 @@ class BeerTableViewController: UITableViewController {
         }
         
         return sections [ section ].numberOfObjects
-
     }
     
     
@@ -100,7 +98,6 @@ class BeerTableViewController: UITableViewController {
             let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
             
             fetchedResultsController.fetchRequest.predicate = andPredicate
-            
         }
         
         do {
@@ -109,14 +106,7 @@ class BeerTableViewController: UITableViewController {
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
-        
     }
-    
-//    @IBAction func valueChanged(_ sender: UISegmentedControl) {
-//        
-//        filterBeers()
-//        beerTable.reloadData()
-//    }
     
     @IBAction func valueChanged(_ sender: UISegmentedControl) {
         filterBeers()
@@ -133,8 +123,6 @@ class BeerTableViewController: UITableViewController {
             destViewController.beerLabelText = fetchedResultsController.object(at: indexPath!).name!
             
             destViewController.beerList = [fetchedResultsController.object(at: indexPath!)]
-            
         }
     }
-
 }
