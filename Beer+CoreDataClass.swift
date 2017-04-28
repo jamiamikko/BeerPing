@@ -2,7 +2,7 @@
 //  Beer+CoreDataClass.swift
 //  BeerPing
 //
-//  Created by iosdev on 26.4.2017.
+//  Created by iosdev on 28.4.2017.
 //  Copyright © 2017 BeerBluds. All rights reserved.
 //
 

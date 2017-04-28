@@ -17,6 +17,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var locationManager:CLLocationManager = CLLocationManager()
     var startLocation: CLLocation!
     @IBOutlet weak var searchBar: UISearchBar!
+    var barAnnotationView: MKAnnotationView!
+    var fetchedResultsController = NSFetchedResultsController<Bar>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +58,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if startLocation == nil {
             startLocation = latestLocation
         }
-        
     }
     
     func locationManager(_ manager: CLLocationManager,
@@ -80,7 +81,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     //Adding annotations to some bars/pubs
     func annotations() {
-        
+
         let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
         
         do {
@@ -92,7 +93,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 result.longitude), subtitle: result.location!)
                 
                 mapView.addAnnotation(pin)
-                
             }
         } catch {
             print("Error: \(error)")
@@ -107,19 +107,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
         let reuseId = "pin"
 
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        self.barAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
 
-        if pinView == nil {
-            pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.image = UIImage(named: "bar-pointer.png")
-            pinView!.canShowCallout = true
+        if self.barAnnotationView == nil {
+            self.barAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            self.barAnnotationView!.image = UIImage(named: "bar-pointer.png")
+            self.barAnnotationView!.canShowCallout = true
             let btn = UIButton(type: .detailDisclosure)
-            pinView?.rightCalloutAccessoryView = btn
+            self.barAnnotationView?.rightCalloutAccessoryView = btn
         }
         else {
-            pinView!.annotation = annotation
+            self.barAnnotationView!.annotation = annotation
         }
-        return pinView
+        return self.barAnnotationView
     }
     
     
@@ -130,7 +130,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if control == view.rightCalloutAccessoryView {
             performSegue(withIdentifier: "fromMapToBeers", sender: annotation?.title)
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -149,8 +148,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBAction func backToUser(_ sender: UIButton) {
 
         getFirstLocation()
-        
     }
+    
+//    func calculateDistance () {
+//        if let userLocation = mapView.userLocation.location, let annotation = self.barAnnotationView.annotation {
+//            // Calculate the distance from the user to the annotation
+//            let annotationLocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+//            let distanceFromUserToAnnotationInMeters = userLocation.distance(from: annotationLocation)
+//            print(distanceFromUserToAnnotationInMeters)
+//        }
+//    }
 }
 
 
