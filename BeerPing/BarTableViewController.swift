@@ -11,24 +11,22 @@ import CoreData
 
 class BarTableViewController: UITableViewController {
     
-    var bars:Array<Bar> = []
+    var fetchedResultsController = NSFetchedResultsController<Bar>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
+        let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
+        
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "name", ascending: true) ]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DatabaseController.getContext(), sectionNameKeyPath: nil, cacheName: nil)
         
         do {
-            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
-            
-            for result in searchResults as [Bar] {
-                bars.append(result)
-                
-            }
-        } catch {
-            print("Error: \(error)")
+            try fetchedResultsController.performFetch()
+        }catch {
+            print("fetchedResultsController.performFetch() failed")
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,14 +36,18 @@ class BarTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+
+        return (fetchedResultsController.sections?.count)!
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bars.count
+
+        guard let sections = fetchedResultsController.sections else {
+            return 0
+        }
+        
+        return sections [ section ].numberOfObjects
     }
 
     
@@ -58,19 +60,19 @@ class BarTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of BarTableViewCell.")
         }
     
-        
-        cell.barName?.text = bars[indexPath.row].name
+        cell.barName?.text = (fetchedResultsController.object(at: indexPath)).name
 
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toBeers" {
+            
+            let cell = sender as! BarTableViewCell
+            let indexPath = tableView.indexPath(for: cell)
             let destViewController: BeerTableViewController = segue.destination as! BeerTableViewController
             
-            destViewController.barName = bars[(self.tableView.indexPathForSelectedRow?.row)!].name
+            destViewController.barName = fetchedResultsController.object(at: indexPath!).name!
         }
     }
-
-
 }
