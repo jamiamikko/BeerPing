@@ -113,6 +113,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("enter region " + region.identifier)
         
+        let currentRegion = region as! CLBeaconRegion
         
         let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
         
