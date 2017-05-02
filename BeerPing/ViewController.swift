@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import MapKit
 import CoreLocation
+import UserNotifications
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -20,8 +21,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var barAnnotationView: MKAnnotationView!
     var fetchedResultsController = NSFetchedResultsController<Bar>()
     
+    let region1 = CLBeaconRegion.init(proximityUUID: NSUUID(uuidString: "824EDFBF-874E-4D14-A8B6-065D8730E867")! as UUID, identifier: "muhBeacon")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
         mapView.showsUserLocation = true
@@ -29,18 +36,66 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         //Configure location manager
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 10.0
         
-        getFirstLocation()
-
         
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         annotations()
+        getFirstLocation()
+        
+        print("authorization status: " + CLLocationManager.authorizationStatus().rawValue.description)
+        
+        locationManager.startMonitoring(for: region1)
+        
     }
+    
+    func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
+        let currentRegion = region as! CLBeaconRegion
+        
+        
+        print("Started monitoring for \(currentRegion.proximityUUID)")
+        
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Found a beacon"
+        content.subtitle = ""
+        content.body = "Entered region of \(currentRegion.proximityUUID)"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false )
+        
+        let requestIdentifier = "Voeh"
+        
+        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger:trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("enter region " + region.identifier)
+        
+
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("exit region " + region.identifier)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        print("did range " +  beacons.count.description + " beacons in " + region.identifier + ":")
+        
+        for b in beacons {
+            print(b.description)
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,11 +114,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             startLocation = latestLocation
         }
     }
-    
-    func locationManager(_ manager: CLLocationManager,
-                         didFailWithError error: Error) {
-        
-    }
+
     
     func getFirstLocation () {
         

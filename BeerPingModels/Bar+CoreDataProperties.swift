@@ -2,7 +2,7 @@
 //  Bar+CoreDataProperties.swift
 //  BeerPing
 //
-//  Created by Mikko Jämiä on 20/04/2017.
+//  Created by Mikko Jämiä on 02/05/2017.
 //  Copyright © 2017 BeerBluds. All rights reserved.
 //
 
@@ -18,10 +18,11 @@ extension Bar {
 
     @NSManaged public var filename: String?
     @NSManaged public var id: Int16
-    @NSManaged public var name: String?
     @NSManaged public var latitude: Double
-    @NSManaged public var longitude: Double
     @NSManaged public var location: String?
+    @NSManaged public var longitude: Double
+    @NSManaged public var name: String?
+    @NSManaged public var uuid: String?
     @NSManaged public var beers: NSSet?
 
 }

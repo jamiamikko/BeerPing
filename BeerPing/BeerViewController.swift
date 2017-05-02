@@ -26,11 +26,12 @@ class BeerViewController: UIViewController {
         super.viewDidLoad()
         
         let filteredBeers = beerList.filter( { return $0.name == beerLabelText } )
+        
         imageURL = "http://users.metropolia.fi/~ottoja/beerbluds/images/" + filteredBeers[0].image!
         
         getImage(imageURL, imageView)
         
-        print(filteredBeers[0])
+
         
         beerName.text = filteredBeers[0].name
         brewery.text = brewery.text! + filteredBeers[0].brewer!

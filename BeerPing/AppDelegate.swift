@@ -10,9 +10,11 @@ import UIKit
 import CoreData
 import CoreTelephony
 import CoreLocation
+import UserNotifications
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     //var locationManager: CLLocationManager?
@@ -43,8 +45,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //locationManager = CLLocationManager()
         //locationManager?.requestWhenInUseAuthorization()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+            
+        })
+        
+        UNUserNotificationCenter.current().delegate = self
+        
         
         return true
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
     }
     
     func uiColorFromHex(rgbValue:UInt32)->UIColor{
@@ -193,6 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             bar.latitude = jsonItem["latitude"] as! Double
                             bar.longitude = jsonItem["longitude"] as! Double
                             bar.location = jsonItem["location"] as? String
+                            bar.uuid = jsonItem["uuid"] as? String
                             
                             
                             DatabaseController.saveContext()
