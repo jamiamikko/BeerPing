@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "getFirstLocation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1034,87 +1034,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "annotations()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "annotations()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "annotations()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "annotations()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "annotations()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -1130,23 +1050,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "annotations()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -1162,7 +1066,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "annotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeerPing/ViewController.swift"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
@@ -1178,7 +1098,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
@@ -1194,7 +1114,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -1210,11 +1130,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
             endingLineNumber = "202"
+            landmarkName = "annotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeerPing/ViewController.swift"
+            timestampString = "515418989.705575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "annotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeerPing/ViewController.swift"
+            timestampString = "515418989.705575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "annotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeerPing/ViewController.swift"
+            timestampString = "515418989.705575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "annotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeerPing/ViewController.swift"
+            timestampString = "515418989.705575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "annotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BeerPing/ViewController.swift"
+            timestampString = "515418989.705575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "annotations()"
             landmarkType = "7">
             <Locations>
@@ -1273,11 +1273,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "annotations()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1289,11 +1289,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "annotations()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1305,11 +1305,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "annotations()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1321,11 +1321,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "annotations()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1337,11 +1337,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1369,11 +1369,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414473.294927"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "mapViewDidFinishLoadingMap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1385,11 +1385,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414473.294927"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "locationManager(_:didStartMonitoringFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1401,7 +1401,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414860.566211"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -1417,7 +1417,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414860.566211"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
@@ -1433,7 +1433,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -1449,7 +1449,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515418266.115804"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -1465,11 +1465,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414473.294927"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "mapViewDidFinishLoadingMap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1481,11 +1481,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414860.566211"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "locationManager(_:didStartMonitoringFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1497,11 +1497,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414473.294927"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "locationManager(_:didStartMonitoringFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1513,11 +1513,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeerPing/ViewController.swift"
-            timestampString = "515414860.566211"
+            timestampString = "515418989.705575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "locationManager(_:didStartMonitoringFor:)"
             landmarkType = "7">
          </BreakpointContent>

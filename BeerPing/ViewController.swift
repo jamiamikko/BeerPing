@@ -46,7 +46,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         UNUserNotificationCenter.current().delegate = self
 
-        
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -108,6 +107,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
+        locationManager.stopMonitoring(for: region1)
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
@@ -145,10 +145,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger:trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        locationManager.stopMonitoring(for: region1)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("exit region " + region.identifier)
+        locationManager.stopMonitoring(for: region1)
     }
     
     
@@ -167,7 +170,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         if startLocation == nil {
             startLocation = latestLocation
+            
         }
+        
     }
 
     
