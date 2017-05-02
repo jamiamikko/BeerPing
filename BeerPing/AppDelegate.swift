@@ -10,11 +10,10 @@ import UIKit
 import CoreData
 import CoreTelephony
 import CoreLocation
-import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     //var locationManager: CLLocationManager?
@@ -45,24 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //locationManager = CLLocationManager()
         //locationManager?.requestWhenInUseAuthorization()
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
-            
-        })
-        
-        UNUserNotificationCenter.current().delegate = self
-        
         
         return true
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler(.alert)
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-    }
-    
     func uiColorFromHex(rgbValue:UInt32)->UIColor{
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0

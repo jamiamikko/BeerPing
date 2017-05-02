@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 import UserNotifications
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var locationManager:CLLocationManager = CLLocationManager()
@@ -21,7 +21,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var barAnnotationView: MKAnnotationView!
     var fetchedResultsController = NSFetchedResultsController<Bar>()
     
-    let region1 = CLBeaconRegion.init(proximityUUID: NSUUID(uuidString: "824EDFBF-874E-4D14-A8B6-065D8730E867")! as UUID, identifier: "muhBeacon")
+    let region1 = CLBeaconRegion.init(proximityUUID: NSUUID(uuidString: "824EDFBF-874E-4D14-A8B6-065D8730E867")! as UUID, identifier: "William K, Sello")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 10.0
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+            
+        })
+        
+        UNUserNotificationCenter.current().delegate = self
+
         
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let notificationBarName = response.notification.request.content.categoryIdentifier
+        
+        performSegue(withIdentifier: "fromMapToBeers", sender: notificationBarName)
+    }
+
+    
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         annotations()
@@ -56,16 +75,30 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
         let currentRegion = region as! CLBeaconRegion
         
-        
         print("Started monitoring for \(currentRegion.proximityUUID)")
         
+        let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
+        
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", currentRegion.proximityUUID as CVarArg)
+        
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "uuid", ascending: true) ]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DatabaseController.getContext(), sectionNameKeyPath: nil, cacheName: nil)
+        
+        do {
+            try fetchedResultsController.performFetch()
+            
+        }catch {
+            print("fetchedResultsController.performFetch() failed")
+        }
         
         let content = UNMutableNotificationContent()
         
         content.title = "Found a beacon"
         content.subtitle = ""
-        content.body = "Entered region of \(currentRegion.proximityUUID)"
+        content.body = "Entered region of \(currentRegion.identifier)"
         content.badge = 1
+        content.categoryIdentifier = (fetchedResultsController.fetchedObjects?[0].name!)!
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false )
         
@@ -80,20 +113,41 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("enter region " + region.identifier)
         
-
         
+        let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
+        
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", currentRegion.proximityUUID as CVarArg)
+        
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "uuid", ascending: true) ]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DatabaseController.getContext(), sectionNameKeyPath: nil, cacheName: nil)
+        
+        do {
+            try fetchedResultsController.performFetch()
+            
+        }catch {
+            print("fetchedResultsController.performFetch() failed")
+        }
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Found a beacon"
+        content.subtitle = ""
+        content.body = "Entered region of \(currentRegion.identifier)"
+        content.badge = 1
+        content.categoryIdentifier = (fetchedResultsController.fetchedObjects?[0].name!)!
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false )
+        
+        let requestIdentifier = "Voeh"
+        
+        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger:trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("exit region " + region.identifier)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        print("did range " +  beacons.count.description + " beacons in " + region.identifier + ":")
-        
-        for b in beacons {
-            print(b.description)
-        }
     }
     
     
@@ -188,10 +242,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let destViewController: BeerTableViewController = segue.destination as! BeerTableViewController
             
             destViewController.barName = String(describing: sender!)
-            print(sender!)
-            
-
-            print(sender ?? "voej")
 
         }
     }
@@ -200,6 +250,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
         getFirstLocation()
     }
+    
+    
     
 //    func calculateDistance () {
 //        if let userLocation = mapView.userLocation.location, let annotation = self.barAnnotationView.annotation {
