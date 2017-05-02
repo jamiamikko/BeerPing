@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zml-R6-aWv" id="qre-tJ-oEr">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="skn-RI-BIF">
@@ -102,7 +102,7 @@
                                 <rect key="frame" x="0.0" y="94" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fId-4I-vIe" id="abk-Sl-9S2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="083-6D-uyb">
@@ -252,25 +252,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="txT-Tt-dVa">
-                                <rect key="frame" x="0.0" y="64" width="1366" height="911"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tod-u2-bJo">
-                                <rect key="frame" x="364" y="637" width="50" height="50"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="txT-Tt-dVa">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="user-location-filled"/>
-                                <connections>
-                                    <action selector="backToUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Yt-KQ-cPS"/>
-                                </connections>
-                            </button>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="txT-Tt-dVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NQQ-wi-6UB"/>
-                            <constraint firstItem="txT-Tt-dVa" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="TSt-Et-Bey"/>
-                            <constraint firstItem="txT-Tt-dVa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UDZ-Ja-JVn"/>
-                            <constraint firstAttribute="trailing" secondItem="txT-Tt-dVa" secondAttribute="trailing" id="XBz-uC-hri"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Beer Ping" id="kcn-TW-uGq"/>
                     <connections>
@@ -289,7 +276,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1696.8" y="1683.5082458770617"/>
+            <point key="canvasLocation" x="1695.6521739130435" y="1683.4239130434785"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Eb7-Iv-54k">
@@ -354,7 +341,6 @@
         <image name="list-filled" width="25" height="25"/>
         <image name="map-empty" width="25" height="25"/>
         <image name="map-filled" width="25" height="25"/>
-        <image name="user-location-filled" width="41" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ALz-Yi-zfC"/>
