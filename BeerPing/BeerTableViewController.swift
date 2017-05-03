@@ -69,6 +69,8 @@ class BeerTableViewController: UITableViewController {
         }
         
         cell.beerName?.text = (fetchedResultsController.object(at: indexPath)).name
+        cell.beerStyle?.text = (fetchedResultsController.object(at: indexPath)).style!
+        cell.beerPrice?.text = (fetchedResultsController.object(at: indexPath)).price! + "/" + (fetchedResultsController.object(at: indexPath)).volume!
         
         return cell
     }
@@ -121,6 +123,8 @@ class BeerTableViewController: UITableViewController {
             let destViewController: BeerViewController = segue.destination as! BeerViewController
             
             destViewController.beerLabelText = fetchedResultsController.object(at: indexPath!).name!
+            
+            destViewController.hidesBottomBarWhenPushed = true
             
             destViewController.beerList = [fetchedResultsController.object(at: indexPath!)]
         }

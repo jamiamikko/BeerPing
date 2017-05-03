@@ -11,6 +11,9 @@ import UIKit
 class BeerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var beerName: UILabel!
+    @IBOutlet weak var beerStyle: UILabel!
+    @IBOutlet weak var beerPrice: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

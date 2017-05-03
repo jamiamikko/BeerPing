@@ -11,6 +11,7 @@ import CoreData
 import CoreTelephony
 import CoreLocation
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,22 +22,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         self.getVersion()
         
         //Create variable which initializes the appearance of the navigation bar
-        let navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearance = UINavigationBar.appearance()
         
         //Set background color of navigation bar
-        navigationBarAppearace.tintColor = uiColorFromHex(rgbValue: 0xFFFFFF)
+        navigationBarAppearance.tintColor = uiColorFromHex(rgbValue: 0xFFFFFF)
         
         //Set button tint colors of the navigation bar
-        navigationBarAppearace.barTintColor = uiColorFromHex(rgbValue: 0x173B47)
+        navigationBarAppearance.barTintColor = uiColorFromHex(rgbValue: 0x173B47)
         
         //Change the color of the status bar
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
         //Change navigation bar title color, font-family and font size
-        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         
         
         //locationManager = CLLocationManager()
@@ -46,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+        
     func uiColorFromHex(rgbValue:UInt32)->UIColor{
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
@@ -192,6 +195,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             bar.latitude = jsonItem["latitude"] as! Double
                             bar.longitude = jsonItem["longitude"] as! Double
                             bar.location = jsonItem["location"] as? String
+                            bar.uuid = jsonItem["uuid"] as? String
                             
                             
                             DatabaseController.saveContext()
@@ -248,6 +252,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             beer.type = jsonItem["type"] as? String
                             beer.recommended = jsonItem["recommended"] as! Bool
                             beer.image = jsonItem["image"] as? String
+                            beer.style = jsonItem["style"] as? String
+                            beer.volume = jsonItem["volume"] as? String
+                            beer.country = jsonItem["country"] as? String
                             
                             currentBar.addToBeers(beer)
                             

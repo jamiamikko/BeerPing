@@ -73,6 +73,8 @@ class BarTableViewController: UITableViewController {
             let destViewController: BeerTableViewController = segue.destination as! BeerTableViewController
             
             destViewController.barName = fetchedResultsController.object(at: indexPath!).name!
+            
+            destViewController.hidesBottomBarWhenPushed = true
         }
     }
 }

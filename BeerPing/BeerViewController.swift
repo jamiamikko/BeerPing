@@ -9,36 +9,43 @@
 import UIKit
 
 class BeerViewController: UIViewController {
-    
-    @IBOutlet weak var beerName: UILabel!
-    @IBOutlet weak var brewery: UILabel!
-    @IBOutlet weak var type: UILabel!
-    @IBOutlet weak var beerDescription: UILabel!
-    @IBOutlet weak var abv: UILabel!
-    @IBOutlet weak var ibu: UILabel!
+
     @IBOutlet weak var imageView: UIImageView!
     var imageURL: String = ""
     var beerLabelText = "Voeh"
     var beerList:Array <Beer> = []
+    var flagURL: String = ""
+    
+    @IBOutlet weak var beerName: UILabel!
+    @IBOutlet weak var brewery: UILabel!
+    @IBOutlet weak var style: UILabel!
+    @IBOutlet weak var abv: UILabel!
+    @IBOutlet weak var ibu: UILabel!
+    @IBOutlet weak var beerDescription: UILabel!
+    @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet weak var price: UILabel!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+
         let filteredBeers = beerList.filter( { return $0.name == beerLabelText } )
+        
         imageURL = "http://users.metropolia.fi/~ottoja/beerbluds/images/" + filteredBeers[0].image!
+        flagURL = "http://users.metropolia.fi/~ottoja/beerbluds/images/" + filteredBeers[0].country!
+        
         
         getImage(imageURL, imageView)
-        
-        print(filteredBeers[0])
+        getImage(flagURL, flagImage)
         
         beerName.text = filteredBeers[0].name
-        brewery.text = brewery.text! + filteredBeers[0].brewer!
-        type.text = filteredBeers[0].type
-        beerDescription.text = beerDescription.text! + "\n" + filteredBeers[0].desc!
-        abv.text = abv.text! + String(filteredBeers[0].abv)
-        ibu.text = ibu.text! + String(filteredBeers[0].ibu)
-        
+        brewery.text = filteredBeers[0].brewer!
+        style.text = filteredBeers[0].style
+        beerDescription.text = filteredBeers[0].desc!
+        //beerDescription.text = filteredBeers[0].desc!
+        abv.text = String(filteredBeers[0].abv) + "%"
+        ibu.text = String(filteredBeers[0].ibu)
+        price.text = String(describing: filteredBeers[0].price!) + "/" + filteredBeers[0].volume!
         // Do any additional setup after loading the view.
     }
 
