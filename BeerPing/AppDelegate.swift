@@ -252,6 +252,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             beer.type = jsonItem["type"] as? String
                             beer.recommended = jsonItem["recommended"] as! Bool
                             beer.image = jsonItem["image"] as? String
+                            beer.size = jsonItem["size"] as? String
                             
                             currentBar.addToBeers(beer)
                             

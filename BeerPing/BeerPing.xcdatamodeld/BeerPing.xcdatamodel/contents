@@ -20,6 +20,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recommended" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bar" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bar" inverseName="beers" inverseEntity="Bar" syncable="YES"/>
     </entity>
@@ -28,7 +29,7 @@
     </entity>
     <elements>
         <element name="Bar" positionX="-1773" positionY="-1035" width="128" height="165"/>
-        <element name="Beer" positionX="-1532" positionY="-1062" width="128" height="208"/>
+        <element name="Beer" positionX="-1532" positionY="-1062" width="128" height="223"/>
         <element name="CurrentVersion" positionX="-1773" positionY="-814" width="128" height="58"/>
     </elements>
 </model>

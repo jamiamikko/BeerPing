@@ -26,6 +26,7 @@ extension Beer {
     @NSManaged public var price: String?
     @NSManaged public var recommended: Bool
     @NSManaged public var type: String?
+    @NSManaged public var size: String?
     @NSManaged public var bar: Bar?
 
 }

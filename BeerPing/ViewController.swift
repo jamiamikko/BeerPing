@@ -14,10 +14,11 @@ import UserNotifications
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     
+    
+    @IBOutlet weak var searchForBars: UISwitch!
     @IBOutlet weak var mapView: MKMapView!
     var locationManager:CLLocationManager = CLLocationManager()
     var startLocation: CLLocation!
-    @IBOutlet weak var searchBar: UISearchBar!
     var barAnnotationView: MKAnnotationView!
     var fetchedResultsController = NSFetchedResultsController<Bar>()
     
@@ -26,7 +27,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        
+        region1.notifyOnEntry = true
+        region1.notifyOnExit = true
+
+        
+        locationManager.requestAlwaysAuthorization()
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,7 +42,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         //Configure location manager
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
         
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 10.0
@@ -58,107 +64,47 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         performSegue(withIdentifier: "fromMapToBeers", sender: notificationBarName)
     }
-
     
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         annotations()
         getFirstLocation()
-        
-        print("authorization status: " + CLLocationManager.authorizationStatus().rawValue.description)
-        
-        locationManager.startMonitoring(for: region1)
-        
+    
     }
     
+
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
         let currentRegion = region as! CLBeaconRegion
         
         print("Started monitoring for \(currentRegion.proximityUUID)")
         
-        let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
-        
-        fetchRequest.predicate = NSPredicate(format: "uuid == %@", currentRegion.proximityUUID as CVarArg)
-        
-        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "uuid", ascending: true) ]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DatabaseController.getContext(), sectionNameKeyPath: nil, cacheName: nil)
-        
-        do {
-            try fetchedResultsController.performFetch()
-            
-        }catch {
-            print("fetchedResultsController.performFetch() failed")
-        }
-        
-        let content = UNMutableNotificationContent()
-        
-        content.title = "Found a beacon"
-        content.subtitle = ""
-        content.body = "Entered region of \(currentRegion.identifier)"
-        content.badge = 1
-        content.categoryIdentifier = (fetchedResultsController.fetchedObjects?[0].name!)!
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false )
-        
-        let requestIdentifier = "Voeh"
-        
-        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger:trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-        locationManager.stopMonitoring(for: region1)
+        //createNotification(region: region)
     }
+    
+    
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("Error: \(error)")
+        searchForBars.setOn(false, animated: true)
+        locationManager.stopMonitoring(for: region1)
+        print("Stopping monitoring")
+        
+    }
+    
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("enter region " + region.identifier)
         
-        let currentRegion = region as! CLBeaconRegion
-        
-        let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
-        
-        fetchRequest.predicate = NSPredicate(format: "uuid == %@", currentRegion.proximityUUID as CVarArg)
-        
-        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "uuid", ascending: true) ]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DatabaseController.getContext(), sectionNameKeyPath: nil, cacheName: nil)
-        
-        do {
-            try fetchedResultsController.performFetch()
-            
-        }catch {
-            print("fetchedResultsController.performFetch() failed")
-        }
-        
-        let content = UNMutableNotificationContent()
-        
-        content.title = "Found a beacon"
-        content.subtitle = ""
-        content.body = "Entered region of \(currentRegion.identifier)"
-        content.badge = 1
-        content.categoryIdentifier = (fetchedResultsController.fetchedObjects?[0].name!)!
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false )
-        
-        let requestIdentifier = "Voeh"
-        
-        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger:trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-        locationManager.stopMonitoring(for: region1)
+        createNotification(region: region)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("exit region " + region.identifier)
+        searchForBars.setOn(false, animated: true)
         locationManager.stopMonitoring(for: region1)
+        print("Stopping monitoring")
+        
     }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -171,6 +117,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if startLocation == nil {
             startLocation = latestLocation
             
+        }
+        
+        if searchForBars.isOn {
+            locationManager.startMonitoring(for: region1)
         }
         
     }
@@ -258,15 +208,59 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     
+    func createNotification(region: CLRegion) {
+        
+        let currentRegion = region as! CLBeaconRegion
+        
+        let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
+        
+        fetchRequest.predicate = NSPredicate(format: "uuid == %@", currentRegion.proximityUUID as CVarArg)
+        
+        fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "uuid", ascending: true) ]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DatabaseController.getContext(), sectionNameKeyPath: nil, cacheName: nil)
+        
+        do {
+            try fetchedResultsController.performFetch()
+            
+        }catch {
+            print("fetchedResultsController.performFetch() failed")
+        }
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Found a beacon"
+        content.subtitle = ""
+        content.body = "Entered region of \(currentRegion.identifier)"
+        content.badge = 1
+        content.categoryIdentifier = (fetchedResultsController.fetchedObjects?[0].name!)!
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false )
+        
+        let requestIdentifier = "Voeh"
+        
+        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger:trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        searchForBars.setOn(false, animated: true)
+        locationManager.stopMonitoring(for: region1)
+        print("Stopping monitoring")
+        
+        
+    }
     
-//    func calculateDistance () {
-//        if let userLocation = mapView.userLocation.location, let annotation = self.barAnnotationView.annotation {
-//            // Calculate the distance from the user to the annotation
-//            let annotationLocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
-//            let distanceFromUserToAnnotationInMeters = userLocation.distance(from: annotationLocation)
-//            print(distanceFromUserToAnnotationInMeters)
-//        }
-//    }
+    
+    @IBAction func searchForBeaconsValueChange(_ sender: Any) {
+        
+        if searchForBars.isOn {
+            locationManager.startMonitoring(for: region1)
+        } else {
+            locationManager.stopMonitoring(for: region1)
+            print("Stopping monitoring")
+        }
+        
+    }
 }
 
 
