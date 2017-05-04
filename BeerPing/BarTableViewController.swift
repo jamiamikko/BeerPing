@@ -35,7 +35,6 @@ class BarTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
 
         return (fetchedResultsController.sections?.count)!

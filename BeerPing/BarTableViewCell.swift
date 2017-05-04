@@ -9,6 +9,7 @@
 import UIKit
 
 class BarTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var barName: UILabel!
 
     override func awakeFromNib() {
