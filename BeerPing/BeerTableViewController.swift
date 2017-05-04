@@ -69,8 +69,10 @@ class BeerTableViewController: UITableViewController {
         return cell
     }
     
+    //Filters beers to three different lists:
     func filterBeers() {
         
+        //Shows only recommended beers
         if segmentedController.selectedSegmentIndex == 0 {
             
             let predicate = NSPredicate(format: "bar.name == %@", argumentArray: [ barName ])
@@ -79,6 +81,7 @@ class BeerTableViewController: UITableViewController {
             
             fetchedResultsController.fetchRequest.predicate = combinePredicates
         }
+        //Shows beers On Tap
         else if segmentedController.selectedSegmentIndex == 1{
             
             let predicate = NSPredicate(format: "bar.name == %@", argumentArray: [ barName ])
@@ -87,6 +90,7 @@ class BeerTableViewController: UITableViewController {
             
             fetchedResultsController.fetchRequest.predicate = combinePredicates
         }
+        //Shows selection of bottles
         else if segmentedController.selectedSegmentIndex == 2 {
             
             let predicate = NSPredicate(format: "bar.name == %@", argumentArray: [ barName ])
@@ -105,11 +109,14 @@ class BeerTableViewController: UITableViewController {
     }
     
     @IBAction func valueChanged(_ sender: UISegmentedControl) {
+        
+        //Filter beers when segmented controller value is changed
         filterBeers()
         beerTable.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toBeerDetails" {
             
             let cell = sender as! BeerTableViewCell
