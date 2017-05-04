@@ -194,8 +194,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         task.resume()
-        
-        
     }
     
     //Function for getting the list of beers for current bar.
