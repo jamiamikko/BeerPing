@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    //Convert RBG values to Hex
     func uiColorFromHex(rgbValue:UInt32)->UIColor{
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
@@ -70,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    
+    //Function for checking the current version of beer and bar server. If data task was successful, compare it to current version in core data. If version does not match, delete the old version and replace new one from server. Once version has been changed, we call getBars() function. If we do not have any version in core data, define the version to be 1.
     func getVersion() {
         let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/version.json")
         
@@ -134,6 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         task.resume()
     }
     
+    //Function for deleting current bars from core data and replacing them with new ones from server. Once we define new bars, we call getBeersForBar() function for each of them.
     func getBars() {
         
         let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
@@ -195,6 +199,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    //Function for getting the list of beers for current bar.
     func getBeersForBar(currentBar: Bar) {
         
         let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/\(currentBar.filename ?? "voeh")")
