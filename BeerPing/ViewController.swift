@@ -33,14 +33,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         region1.notifyOnEntry = true
         region1.notifyOnExit = true
         
-        locationManager.requestAlwaysAuthorization()
+        let status = CLLocationManager.authorizationStatus()
+        
+        //Check the user's authorization status
+        if status == CLAuthorizationStatus.notDetermined {
+            locationManager.requestAlwaysAuthorization()
+        }else {
+            getFirstLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            locationManager.distanceFilter = 10.0
+        }
         
         mapView.delegate = self
         mapView.showsUserLocation = true
-        
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        locationManager.distanceFilter = 10.0
         
         mapView.delegate = self
         mapView.showsUserLocation = true
@@ -50,7 +56,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         UNUserNotificationCenter.current().delegate = self
         
-        getFirstLocation()
+        //getFirstLocation()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -242,6 +248,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             locationManager.stopMonitoring(for: region1)
             print("Stopping monitoring")
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if (status == CLAuthorizationStatus.denied) {
+            print("authorization status not determined")
+        } else if (status == CLAuthorizationStatus.authorizedAlways) {
+            // The user accepted authorization
+            getFirstLocation()
+        } 
     }
 }
 
