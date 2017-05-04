@@ -33,8 +33,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         region1.notifyOnEntry = true
         region1.notifyOnExit = true
         
-        //Configure location manager
         locationManager.requestAlwaysAuthorization()
+        
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 10.0
@@ -230,6 +233,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         print("Stopping monitoring")
     }
     
+    //Toggle action for switch in top right corner of map view.
     @IBAction func searchForBeaconsValueChange(_ sender: Any) {
         
         if searchForBars.isOn {
