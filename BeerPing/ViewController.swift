@@ -32,7 +32,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         region1.notifyOnEntry = true
         region1.notifyOnExit = true
         
-        
         locationManager.requestAlwaysAuthorization()
         
         
@@ -69,8 +68,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         annotations()
+
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
         let currentRegion = region as! CLBeaconRegion
@@ -103,7 +102,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         print("Stopping monitoring")
         
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -249,7 +247,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
-    @IBAction func searchForBeaconsValueChanged(_ sender: Any) {
+    @IBAction func searchForBeaconsValueChange(_ sender: Any) {
+        
         if searchForBars.isOn {
             locationManager.startMonitoring(for: region1)
         } else {

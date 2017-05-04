@@ -209,7 +209,7 @@
                                                     <constraint firstAttribute="height" constant="27" id="fW4-dz-96D"/>
                                                     <constraint firstAttribute="width" constant="283" id="vYv-se-NLN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -376,12 +376,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="txT-Tt-dVa">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="txT-Tt-dVa">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="txT-Tt-dVa" secondAttribute="trailing" id="2QU-bb-kOj"/>
+                            <constraint firstItem="txT-Tt-dVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FIy-fO-gyN"/>
+                            <constraint firstItem="txT-Tt-dVa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Qhw-S1-yFW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="txT-Tt-dVa" secondAttribute="bottom" id="S9p-j0-F4d"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Beer Ping" id="kcn-TW-uGq">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="ZCi-5c-YLo">

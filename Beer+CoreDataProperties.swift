@@ -18,6 +18,7 @@ extension Beer {
 
     @NSManaged public var abv: Float
     @NSManaged public var brewer: String?
+    @NSManaged public var country: String?
     @NSManaged public var desc: String?
     @NSManaged public var ibu: Int16
     @NSManaged public var id: Int16
@@ -28,7 +29,6 @@ extension Beer {
     @NSManaged public var style: String?
     @NSManaged public var type: String?
     @NSManaged public var volume: String?
-    @NSManaged public var country: String?
     @NSManaged public var bar: Bar?
 
 }

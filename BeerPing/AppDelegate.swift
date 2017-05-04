@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Set background color of navigation bar
         navigationBarAppearance.tintColor = uiColorFromHex(rgbValue: 0xFFFFFF)
-        
+
         //Set button tint colors of the navigation bar
         navigationBarAppearance.barTintColor = uiColorFromHex(rgbValue: 0x173B47)
         
