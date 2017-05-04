@@ -16,7 +16,6 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //var locationManager: CLLocationManager?
     
 
 
