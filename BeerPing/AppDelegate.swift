@@ -11,7 +11,6 @@ import CoreData
 import CoreTelephony
 import CoreLocation
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

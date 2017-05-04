@@ -26,26 +26,23 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         // Do any additional setup after loading the view, typically from a nib.
         
         locationManager.delegate = self
         
         region1.notifyOnEntry = true
         region1.notifyOnExit = true
         
-        locationManager.requestAlwaysAuthorization()
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        mapView.delegate = self
-        mapView.showsUserLocation = true
-        
         //Configure location manager
+        locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 10.0
         
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
-            
         })
         
         UNUserNotificationCenter.current().delegate = self
@@ -89,6 +86,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        
         print("enter region " + region.identifier)
         
         createNotification(region: region)
@@ -183,11 +181,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "fromMapToBeers" {
             let destViewController: BeerTableViewController = segue.destination as! BeerTableViewController
             
             destViewController.barName = String(describing: sender!)
-            
         }
     }
     
@@ -230,8 +228,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         searchForBars.setOn(false, animated: true)
         locationManager.stopMonitoring(for: region1)
         print("Stopping monitoring")
-        
-        
     }
     
     @IBAction func searchForBeaconsValueChange(_ sender: Any) {
