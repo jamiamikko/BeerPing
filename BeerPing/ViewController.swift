@@ -34,12 +34,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         locationManager.requestAlwaysAuthorization()
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
         mapView.showsUserLocation = true
         
-        //Configure location manager
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 10.0
@@ -234,6 +231,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
+    //Toggle action for switch in top right corner of map view.
     @IBAction func searchForBeaconsValueChange(_ sender: Any) {
         
         if searchForBars.isOn {

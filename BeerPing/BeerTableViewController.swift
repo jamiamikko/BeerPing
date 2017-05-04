@@ -26,10 +26,10 @@ class BeerTableViewController: UITableViewController {
 
         let predicate = NSPredicate(format: "bar.name == %@", argumentArray: [ barName ])
         let typePredicate = NSPredicate(format: "recommended == %@", NSNumber(booleanLiteral: true))
-        let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
+        let combinePredicates = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
         
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "name", ascending: true) ]
-        fetchRequest.predicate = andPredicate
+        fetchRequest.predicate = combinePredicates
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DatabaseController.getContext(), sectionNameKeyPath: nil, cacheName: nil)
         
