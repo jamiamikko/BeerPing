@@ -11,11 +11,11 @@ import CoreData
 
 class BeerTableViewController: UITableViewController {
     
-    var barName: String!
     @IBOutlet var beerTable: UITableView!
-    var fetchedResultsController = NSFetchedResultsController<Beer>()
     @IBOutlet weak var segmentedController: UISegmentedControl!
     @IBOutlet weak var barTitle: UINavigationItem!
+    var fetchedResultsController = NSFetchedResultsController<Beer>()
+    var barName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +38,6 @@ class BeerTableViewController: UITableViewController {
         }catch {
             print("fetchedResultsController.performFetch() failed")
         }
-    }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,25 +75,25 @@ class BeerTableViewController: UITableViewController {
             
             let predicate = NSPredicate(format: "bar.name == %@", argumentArray: [ barName ])
             let typePredicate = NSPredicate(format: "recommended == %@", NSNumber(booleanLiteral: true))
-            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
+            let combinePredicates = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
             
-            fetchedResultsController.fetchRequest.predicate = andPredicate
+            fetchedResultsController.fetchRequest.predicate = combinePredicates
         }
         else if segmentedController.selectedSegmentIndex == 1{
             
             let predicate = NSPredicate(format: "bar.name == %@", argumentArray: [ barName ])
             let typePredicate = NSPredicate(format: "type == %@","On tap")
-            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
+            let combinePredicates = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
             
-            fetchedResultsController.fetchRequest.predicate = andPredicate
+            fetchedResultsController.fetchRequest.predicate = combinePredicates
         }
         else if segmentedController.selectedSegmentIndex == 2 {
             
             let predicate = NSPredicate(format: "bar.name == %@", argumentArray: [ barName ])
             let typePredicate = NSPredicate(format: "type == %@","Bottle")
-            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
+            let combinePredicates = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [predicate, typePredicate])
             
-            fetchedResultsController.fetchRequest.predicate = andPredicate
+            fetchedResultsController.fetchRequest.predicate = combinePredicates
         }
         
         do {

@@ -41,7 +41,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         //Configure location manager
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 10.0
         
@@ -107,13 +106,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let latestLocation: CLLocation = locations[locations.count - 1]
         
-        
-        print("user latitude = \(latestLocation.coordinate.latitude)")
-        print("user longitude = \(latestLocation.coordinate.longitude)")
-        
         if startLocation == nil {
-            startLocation = latestLocation
-            
+            startLocation = latestLocation            
         }
         
         if searchForBars.isOn {
@@ -122,15 +116,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
-    
+    //This function zooms and centers the user location when map is loaded. Gets called on ViewDidLoad()
     func getFirstLocation () {
         
         startLocation = locationManager.location
         
         let currentLocation2d = startLocation.coordinate
-        
-        print(currentLocation2d)
-        
+
         let region = MKCoordinateRegionMakeWithDistance(currentLocation2d, 400, 400)
         
         mapView.setRegion(region, animated: false)
@@ -197,11 +189,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             destViewController.barName = String(describing: sender!)
             
         }
-    }
-    
-    @IBAction func backToUser(_ sender: UIButton) {
-        
-        getFirstLocation()
     }
     
     

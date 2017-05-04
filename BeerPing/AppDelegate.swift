@@ -16,10 +16,7 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //var locationManager: CLLocationManager?
     
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -39,16 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Change navigation bar title color, font-family and font size
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-        
-        
-        //locationManager = CLLocationManager()
-        //locationManager?.requestWhenInUseAuthorization()
-        
-        
+
         return true
     }
     
-        
     func uiColorFromHex(rgbValue:UInt32)->UIColor{
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
@@ -56,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return UIColor(red:red, green:green, blue:blue, alpha:1.0)
     }
-
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -95,19 +85,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     {
                         let json = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
                         
-                        
-                        
                         if json["version"] != nil {
                             let fetchRequest:NSFetchRequest<CurrentVersion> = CurrentVersion.fetchRequest()
                             
                             do {
-                                
                                 let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
                                 
                                 if searchResults.count != 0 {
                                     for result in searchResults as [CurrentVersion] {
-                                    
-                                        print(result.version)
                                         
                                         if result.version != json["version"] as! Int32 {
                                             
@@ -122,7 +107,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             DatabaseController.saveContext()
                                             
                                             self.getBars()
-
                                         }
                                     }
                                 } else {
@@ -139,8 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             } catch {
                                 print("Error: \(error)")
                             }
-                            
-                            
                         }
                     }
                     catch{
@@ -150,7 +132,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         task.resume()
-
     }
     
     func getBars() {
@@ -197,15 +178,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             bar.location = jsonItem["location"] as? String
                             bar.uuid = jsonItem["uuid"] as? String
                             
-                            
                             DatabaseController.saveContext()
                             
                             self.getBeersForBar(currentBar: bar)
                         
                         }
-                        
                     }
-                        
                     catch{
                         print("error")
                     }
@@ -218,7 +196,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func getBeersForBar(currentBar: Bar) {
-        
         
         let url = URL(string: "http://users.metropolia.fi/~ottoja/beerbluds/\(currentBar.filename ?? "voeh")")
         
@@ -269,9 +246,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        task.resume()
-
-        
+        task.resume()        
     }
 }
 
