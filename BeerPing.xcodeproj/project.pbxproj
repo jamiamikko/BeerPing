@@ -16,6 +16,7 @@
 		6A3ED93F1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED93D1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift */; };
 		6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */; };
 		7D4DA09EFDFA9C8CCFC35792 /* Pods_BeerPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4930276AFE96E5F236474462 /* Pods_BeerPing.framework */; };
+		BC3E3D061ECF0227001EA44E /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3D051ECF0227001EA44E /* FirebaseController.swift */; };
 		BC44F5B21EA76AEA00F20AB0 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5B11EA76AEA00F20AB0 /* BeerViewController.swift */; };
 		BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */; };
 		BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5D1E924EA800CF0B57 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		6A3ED93D1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataProperties.swift"; path = "../CurrentVersion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		A3070754E7A3E3561766DCB2 /* Pods-BeerPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerPing/Pods-BeerPing.release.xcconfig"; sourceTree = "<group>"; };
+		BC3E3D051ECF0227001EA44E /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		BC44F5B11EA76AEA00F20AB0 /* BeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		BC784C581E924EA800CF0B57 /* BeerPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */,
 				6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */,
 				BC784C5D1E924EA800CF0B57 /* ViewController.swift */,
+				BC3E3D051ECF0227001EA44E /* FirebaseController.swift */,
 				BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */,
 				BCDC64A81E9CD2CE009F2A06 /* BarTableViewCell.swift */,
 				BCDC64A61E9CD140009F2A06 /* BarTableViewController.swift */,
@@ -393,6 +396,7 @@
 				6A3ED93A1EBA0E70001E671B /* Beer+CoreDataClass.swift in Sources */,
 				6A3ED93E1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift in Sources */,
 				BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */,
+				BC3E3D061ECF0227001EA44E /* FirebaseController.swift in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
 				BC44F5B21EA76AEA00F20AB0 /* BeerViewController.swift in Sources */,
 				6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */,
