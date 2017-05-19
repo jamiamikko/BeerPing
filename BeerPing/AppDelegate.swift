@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import CoreTelephony
 import CoreLocation
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var locationManager: CLLocationManager?
     
+    override init () {
+        
+        FIRApp.configure()
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         
         locationManager = CLLocationManager()
         locationManager?.requestAlwaysAuthorization()
@@ -31,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Set background color of navigation bar
         navigationBarAppearance.tintColor = uiColorFromHex(rgbValue: 0xFFFFFF)
-
+        
         //Set button tint colors of the navigation bar
         navigationBarAppearance.barTintColor = uiColorFromHex(rgbValue: 0x173B47)
         
@@ -40,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Change navigation bar title color, font-family and font size
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-
+        
         return true
     }
     

@@ -11,6 +11,7 @@ import CoreData
 import MapKit
 import CoreLocation
 import UserNotifications
+import Firebase
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     
@@ -23,10 +24,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     let region1 = CLBeaconRegion.init(proximityUUID: NSUUID(uuidString: "824EDFBF-874E-4D14-A8B6-065D8730E867")! as UUID, identifier: "William K, Sello")
     
+    let rootRef = FIRDatabase.database().reference()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
          // Do any additional setup after loading the view, typically from a nib.
+        
+        let barRef = rootRef.child("bars")
+        
+        barRef.observe(.value, with: { (snapshot: FIRDataSnapshot) in
+            print(snapshot)
+        })
         
         locationManager.delegate = self
         
