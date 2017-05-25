@@ -8,13 +8,19 @@
 
 import UIKit
 import CoreData
+import Firebase
 
-class BarTableViewController: UITableViewController {
+class BarTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchedResultsController = NSFetchedResultsController<Bar>()
+    var refHandler: FIRDatabaseHandle!
+    var barsRef = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.barsRef = barsRef.child("bars")
+
         
         let fetchRequest = NSFetchRequest<Bar>(entityName: "Bar")
         
@@ -27,8 +33,26 @@ class BarTableViewController: UITableViewController {
         }catch {
             print("fetchedResultsController.performFetch() failed")
         }
+        
+        
+        refHandler = barsRef.observe(.value, with: { barSnapshot in
+            
+            do {
+                try self.fetchedResultsController.performFetch()
+            }catch {
+                print("fetchedResultsController.performFetch() failed")
+            }
+            
+            self.tableView.reloadData()
+            
+        })
+    
     }
 
+    
+
+    
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
 

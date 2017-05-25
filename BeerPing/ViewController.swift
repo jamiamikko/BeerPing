@@ -24,12 +24,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     let region1 = CLBeaconRegion.init(proximityUUID: NSUUID(uuidString: "824EDFBF-874E-4D14-A8B6-065D8730E867")! as UUID, identifier: "William K, Sello")
     
-    let firebController: FirebaseController = FirebaseController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
          // Do any additional setup after loading the view, typically from a nib.
-    
+
         
         locationManager.delegate = self
         
@@ -50,16 +49,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         mapView.delegate = self
         mapView.showsUserLocation = true
-        
-        mapView.delegate = self
-        mapView.showsUserLocation = true
+
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
         })
         
         UNUserNotificationCenter.current().delegate = self
         
-        firebController.getBars()
+        //getFirstLocation()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
+        let firebObserver: FirebaseObserver = FirebaseObserver()
+        
+        firebObserver.observe()
+        
         locationManager = CLLocationManager()
         locationManager?.requestAlwaysAuthorization()
         
@@ -47,8 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Change navigation bar title color, font-family and font size
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-        
-        DatabaseController.saveContext()
         
         
         return true

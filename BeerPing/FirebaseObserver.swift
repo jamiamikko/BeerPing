@@ -10,23 +10,27 @@ import UIKit
 import Firebase
 import CoreData
 
-class FirebaseController {
+class FirebaseObserver {
     
-    let rootRef = FIRDatabase.database().reference()
     var refHandler: FIRDatabaseHandle!
     var barsRef = FIRDatabase.database().reference()
     
     init() {
         
-        self.barsRef = rootRef.child("bars")
+        self.barsRef = barsRef.child("bars")
         
     }
     
-    
-    func getBars() {
-        
+    func observe() {
         refHandler = barsRef.observe(.value, with: { barSnapshot in
             
+            self.getBars(barSnapshot: barSnapshot)
+            
+        })
+    }
+    
+    func getBars(barSnapshot: FIRDataSnapshot) {
+        
             let fetchRequest:NSFetchRequest<Bar> = Bar.fetchRequest()
             
             do {
@@ -46,16 +50,12 @@ class FirebaseController {
                 let barClassName:String = String(describing: Bar.self)
                 let barObject: Bar = NSEntityDescription.insertNewObject(forEntityName: barClassName, into: DatabaseController.getContext()) as! Bar
                 
-                
-                print("bar ID: \(bar.key)")
-                
                 for attribute in bar.children {
                     
                     let barAttribute = attribute as! FIRDataSnapshot
                     
                     switch barAttribute.key {
                     case "beers":
-                        print("voeh")
                         
                         for beer in barAttribute.value as! [AnyObject] {
                             let beerAttributes: Dictionary<String, Any> = beer as! Dictionary
@@ -63,27 +63,21 @@ class FirebaseController {
                             self.getBeers(currentBar: barObject, beerAttributes: beerAttributes)
                         }
                     case "id":
-                        print("id is \(barAttribute.value!)")
                         barObject.id = barAttribute.value as! Int16
                         
                     case "latitude":
-                        print("latitude is \(barAttribute.value!)")
                         barObject.latitude = barAttribute.value as! Double
                         
                     case "location":
-                        print("location is \(barAttribute.value!)")
                         barObject.location = barAttribute.value as? String
                         
                     case "longitude":
-                        print("longitude is \(barAttribute.value!)")
                         barObject.longitude = barAttribute.value as! Double
                         
                     case "name":
-                        print("name is \(barAttribute.value!)")
                         barObject.name = barAttribute.value as? String
                         
                     case "uuid":
-                        print("uuid is \(barAttribute.value!)")
                         barObject.uuid = barAttribute.value as? String
                         
                     default:
@@ -95,9 +89,7 @@ class FirebaseController {
                 
                 DatabaseController.saveContext()
                 
-                
             }
-        })
     
     }
     
