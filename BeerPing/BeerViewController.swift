@@ -10,15 +10,17 @@ import UIKit
 
 class BeerViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var beerName: UILabel!
     @IBOutlet weak var brewery: UILabel!
     @IBOutlet weak var style: UILabel!
+    @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet weak var beerDescription: UILabel!
     @IBOutlet weak var abv: UILabel!
     @IBOutlet weak var ibu: UILabel!
-    @IBOutlet weak var beerDescription: UILabel!
-    @IBOutlet weak var flagImage: UIImageView!
     @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var imageURL: String = ""
     var flagURL: String = ""
     var beerLabelText = "Voeh"
@@ -27,7 +29,7 @@ class BeerViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
         let filteredBeers = beerList.filter( { return $0.name == beerLabelText } )
         
         imageURL = "http://users.metropolia.fi/~ottoja/beerbluds/images/" + filteredBeers[0].image!

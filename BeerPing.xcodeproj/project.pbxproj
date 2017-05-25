@@ -14,6 +14,7 @@
 		6A3ED93B1EBA0E70001E671B /* Beer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED9391EBA0E70001E671B /* Beer+CoreDataProperties.swift */; };
 		6A3ED93E1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED93C1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift */; };
 		6A3ED93F1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED93D1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift */; };
+		6AA3FF5A1ECEF634002BA602 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3FF591ECEF634002BA602 /* GoogleService-Info.plist */; };
 		6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */; };
 		7D4DA09EFDFA9C8CCFC35792 /* Pods_BeerPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4930276AFE96E5F236474462 /* Pods_BeerPing.framework */; };
 		BC44F5B21EA76AEA00F20AB0 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5B11EA76AEA00F20AB0 /* BeerViewController.swift */; };
@@ -23,7 +24,6 @@
 		BC784C631E924EA800CF0B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC784C621E924EA800CF0B57 /* Assets.xcassets */; };
 		BC784C661E924EA800CF0B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */; };
 		BC784C711E924EA800CF0B57 /* BeerPingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C701E924EA800CF0B57 /* BeerPingTests.swift */; };
-		BCCB21EE1ECCCC7200016CBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */; };
 		BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */; };
 		BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */; };
 		BCDC64A71E9CD140009F2A06 /* BarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC64A61E9CD140009F2A06 /* BarTableViewController.swift */; };
@@ -53,6 +53,7 @@
 		6A3ED9391EBA0E70001E671B /* Beer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataProperties.swift"; path = "../Beer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A3ED93C1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataClass.swift"; path = "../CurrentVersion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6A3ED93D1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataProperties.swift"; path = "../CurrentVersion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6AA3FF591ECEF634002BA602 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		A3070754E7A3E3561766DCB2 /* Pods-BeerPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerPing/Pods-BeerPing.release.xcconfig"; sourceTree = "<group>"; };
 		BC44F5B11EA76AEA00F20AB0 /* BeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		BC784C6C1E924EA800CF0B57 /* BeerPingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C701E924EA800CF0B57 /* BeerPingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPingTests.swift; sourceTree = "<group>"; };
 		BC784C721E924EA800CF0B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCD7E7E21E9B952100490E66 /* BeerPing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeerPing.xcdatamodel; sourceTree = "<group>"; };
 		BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		BCDC64A61E9CD140009F2A06 /* BarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarTableViewController.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				BC784C671E924EA800CF0B57 /* Info.plist */,
 				BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */,
 				BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */,
-				BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */,
+				6AA3FF591ECEF634002BA602 /* GoogleService-Info.plist */,
 			);
 			path = BeerPing;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC784C661E924EA800CF0B57 /* LaunchScreen.storyboard in Resources */,
-				BCCB21EE1ECCCC7200016CBE /* GoogleService-Info.plist in Resources */,
+				6AA3FF5A1ECEF634002BA602 /* GoogleService-Info.plist in Resources */,
 				BC784C631E924EA800CF0B57 /* Assets.xcassets in Resources */,
 				BC784C611E924EA800CF0B57 /* Main.storyboard in Resources */,
 			);
