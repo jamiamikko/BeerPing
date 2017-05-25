@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6859406CA0D8198F7B042220 /* Pods_BeerPingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF716CBA34873396E406CD9D /* Pods_BeerPingTests.framework */; };
-		6A3ED9361EBA0E5E001E671B /* Bar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED9341EBA0E5E001E671B /* Bar+CoreDataClass.swift */; };
-		6A3ED9371EBA0E5E001E671B /* Bar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED9351EBA0E5E001E671B /* Bar+CoreDataProperties.swift */; };
-		6A3ED93A1EBA0E70001E671B /* Beer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED9381EBA0E70001E671B /* Beer+CoreDataClass.swift */; };
-		6A3ED93B1EBA0E70001E671B /* Beer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED9391EBA0E70001E671B /* Beer+CoreDataProperties.swift */; };
-		6A3ED93E1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED93C1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift */; };
-		6A3ED93F1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED93D1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift */; };
 		6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */; };
 		7D4DA09EFDFA9C8CCFC35792 /* Pods_BeerPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4930276AFE96E5F236474462 /* Pods_BeerPing.framework */; };
 		BC3E3D061ECF0227001EA44E /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3D051ECF0227001EA44E /* FirebaseController.swift */; };
@@ -24,6 +18,12 @@
 		BC784C631E924EA800CF0B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC784C621E924EA800CF0B57 /* Assets.xcassets */; };
 		BC784C661E924EA800CF0B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */; };
 		BC784C711E924EA800CF0B57 /* BeerPingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C701E924EA800CF0B57 /* BeerPingTests.swift */; };
+		BCBBD6031ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD5FD1ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift */; };
+		BCBBD6041ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD5FE1ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift */; };
+		BCBBD6051ED6A9EB00498181 /* Bar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD5FF1ED6A9EB00498181 /* Bar+CoreDataClass.swift */; };
+		BCBBD6061ED6A9EB00498181 /* Bar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD6001ED6A9EB00498181 /* Bar+CoreDataProperties.swift */; };
+		BCBBD6071ED6A9EB00498181 /* Beer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD6011ED6A9EB00498181 /* Beer+CoreDataClass.swift */; };
+		BCBBD6081ED6A9EB00498181 /* Beer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD6021ED6A9EB00498181 /* Beer+CoreDataProperties.swift */; };
 		BCCB21EE1ECCCC7200016CBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */; };
 		BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */; };
 		BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */; };
@@ -48,12 +48,6 @@
 		0F16053DDF815C019827B1A5 /* Pods-BeerPingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerPingTests/Pods-BeerPingTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D98D02BD02D6C6A1189ABF6 /* Pods-BeerPingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerPingTests/Pods-BeerPingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4930276AFE96E5F236474462 /* Pods_BeerPing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerPing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A3ED9341EBA0E5E001E671B /* Bar+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataClass.swift"; path = "../Bar+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6A3ED9351EBA0E5E001E671B /* Bar+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataProperties.swift"; path = "../Bar+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A3ED9381EBA0E70001E671B /* Beer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataClass.swift"; path = "../Beer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6A3ED9391EBA0E70001E671B /* Beer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataProperties.swift"; path = "../Beer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6A3ED93C1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataClass.swift"; path = "../CurrentVersion+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6A3ED93D1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataProperties.swift"; path = "../CurrentVersion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6AEA25AC1E9CCE8500FCBE6E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		A3070754E7A3E3561766DCB2 /* Pods-BeerPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerPing/Pods-BeerPing.release.xcconfig"; sourceTree = "<group>"; };
 		BC3E3D051ECF0227001EA44E /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -68,6 +62,12 @@
 		BC784C6C1E924EA800CF0B57 /* BeerPingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C701E924EA800CF0B57 /* BeerPingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPingTests.swift; sourceTree = "<group>"; };
 		BC784C721E924EA800CF0B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCBBD5FD1ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataClass.swift"; path = "../CurrentVersion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCBBD5FE1ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataProperties.swift"; path = "../CurrentVersion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCBBD5FF1ED6A9EB00498181 /* Bar+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataClass.swift"; path = "../Bar+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCBBD6001ED6A9EB00498181 /* Bar+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataProperties.swift"; path = "../Bar+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCBBD6011ED6A9EB00498181 /* Beer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataClass.swift"; path = "../Beer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCBBD6021ED6A9EB00498181 /* Beer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataProperties.swift"; path = "../Beer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCD7E7E21E9B952100490E66 /* BeerPing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeerPing.xcdatamodel; sourceTree = "<group>"; };
 		BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
@@ -121,12 +121,12 @@
 		BC3E48371E9E07C90007A0DB /* EntityClasses */ = {
 			isa = PBXGroup;
 			children = (
-				6A3ED9341EBA0E5E001E671B /* Bar+CoreDataClass.swift */,
-				6A3ED9351EBA0E5E001E671B /* Bar+CoreDataProperties.swift */,
-				6A3ED9381EBA0E70001E671B /* Beer+CoreDataClass.swift */,
-				6A3ED9391EBA0E70001E671B /* Beer+CoreDataProperties.swift */,
-				6A3ED93C1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift */,
-				6A3ED93D1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift */,
+				BCBBD5FD1ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift */,
+				BCBBD5FE1ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift */,
+				BCBBD5FF1ED6A9EB00498181 /* Bar+CoreDataClass.swift */,
+				BCBBD6001ED6A9EB00498181 /* Bar+CoreDataProperties.swift */,
+				BCBBD6011ED6A9EB00498181 /* Beer+CoreDataClass.swift */,
+				BCBBD6021ED6A9EB00498181 /* Beer+CoreDataProperties.swift */,
 			);
 			name = EntityClasses;
 			sourceTree = "<group>";
@@ -388,14 +388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A3ED9361EBA0E5E001E671B /* Bar+CoreDataClass.swift in Sources */,
-				6A3ED93B1EBA0E70001E671B /* Beer+CoreDataProperties.swift in Sources */,
-				6A3ED93F1EBA0E81001E671B /* CurrentVersion+CoreDataProperties.swift in Sources */,
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
-				6A3ED9371EBA0E5E001E671B /* Bar+CoreDataProperties.swift in Sources */,
-				6A3ED93A1EBA0E70001E671B /* Beer+CoreDataClass.swift in Sources */,
-				6A3ED93E1EBA0E81001E671B /* CurrentVersion+CoreDataClass.swift in Sources */,
+				BCBBD6061ED6A9EB00498181 /* Bar+CoreDataProperties.swift in Sources */,
+				BCBBD6041ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift in Sources */,
 				BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */,
+				BCBBD6031ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift in Sources */,
+				BCBBD6071ED6A9EB00498181 /* Beer+CoreDataClass.swift in Sources */,
 				BC3E3D061ECF0227001EA44E /* FirebaseController.swift in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
 				BC44F5B21EA76AEA00F20AB0 /* BeerViewController.swift in Sources */,
@@ -403,7 +401,9 @@
 				BCDC64A91E9CD2CE009F2A06 /* BarTableViewCell.swift in Sources */,
 				BCDC64AF1E9CF6FF009F2A06 /* BeerTableViewCell.swift in Sources */,
 				BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */,
+				BCBBD6051ED6A9EB00498181 /* Bar+CoreDataClass.swift in Sources */,
 				BCDC64A71E9CD140009F2A06 /* BarTableViewController.swift in Sources */,
+				BCBBD6081ED6A9EB00498181 /* Beer+CoreDataProperties.swift in Sources */,
 				BCDC64AB1E9CF4A6009F2A06 /* BeerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

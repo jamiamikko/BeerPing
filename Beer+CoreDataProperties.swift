@@ -1,9 +1,9 @@
 //
 //  Beer+CoreDataProperties.swift
-//  BeerPing
+//  
 //
-//  Created by iosdev on 3.5.2017.
-//  Copyright © 2017 BeerBluds. All rights reserved.
+//  Created by Mikko Jämiä on 25/05/2017.
+//
 //
 
 import Foundation
@@ -13,7 +13,7 @@ import CoreData
 extension Beer {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Beer> {
-        return NSFetchRequest<Beer>(entityName: "Beer");
+        return NSFetchRequest<Beer>(entityName: "Beer")
     }
 
     @NSManaged public var abv: Float

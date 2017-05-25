@@ -2,6 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CurrentVersion+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CurrentVersion+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bar+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bar+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Beer+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Beer+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:BeerPing.xcodeproj">
    </FileRef>
    <FileRef

@@ -1,9 +1,9 @@
 //
 //  Bar+CoreDataProperties.swift
-//  BeerPing
+//  
 //
-//  Created by iosdev on 3.5.2017.
-//  Copyright © 2017 BeerBluds. All rights reserved.
+//  Created by Mikko Jämiä on 25/05/2017.
+//
 //
 
 import Foundation
@@ -13,10 +13,9 @@ import CoreData
 extension Bar {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Bar> {
-        return NSFetchRequest<Bar>(entityName: "Bar");
+        return NSFetchRequest<Bar>(entityName: "Bar")
     }
 
-    @NSManaged public var filename: String?
     @NSManaged public var id: Int16
     @NSManaged public var latitude: Double
     @NSManaged public var location: String?

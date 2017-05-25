@@ -1,9 +1,9 @@
 //
 //  Beer+CoreDataClass.swift
-//  BeerPing
+//  
 //
-//  Created by iosdev on 3.5.2017.
-//  Copyright © 2017 BeerBluds. All rights reserved.
+//  Created by Mikko Jämiä on 25/05/2017.
+//
 //
 
 import Foundation
