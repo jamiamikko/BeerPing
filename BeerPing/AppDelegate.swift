@@ -48,11 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Change navigation bar title color, font-family and font size
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         
-        let firebController: FirebaseController = FirebaseController()
-        
         DatabaseController.saveContext()
-        
-        firebController.getBars()
         
         
         return true

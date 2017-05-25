@@ -60,46 +60,7 @@ class FirebaseController {
                         for beer in barAttribute.value as! [AnyObject] {
                             let beerAttributes: Dictionary<String, Any> = beer as! Dictionary
                             
-                            let beerClassName:String = String(describing: Beer.self)
-                            let beerObject: Beer = NSEntityDescription.insertNewObject(forEntityName: beerClassName, into: DatabaseController.getContext()) as! Beer
-                            
-                            for (key, value) in beerAttributes {
-                                
-                                switch key {
-                                case "abv":
-                                    beerObject.abv = value as! Float
-                                case "brewery":
-                                    beerObject.brewer = value as? String
-                                case "country":
-                                    beerObject.country = value as? String
-                                case "description":
-                                    beerObject.desc = value as? String
-                                case "ibu":
-                                    beerObject.ibu = value as! Int16
-                                case "id":
-                                    beerObject.id = value as! Int16
-                                case "image":
-                                    beerObject.image = value as? String
-                                case "name":
-                                    beerObject.name = value as? String
-                                case "price":
-                                    beerObject.price = value as? String
-                                case "recommended":
-                                    beerObject.recommended = value as! Bool
-                                case "style":
-                                    beerObject.style = value as? String
-                                case "type":
-                                    beerObject.type = value as? String
-                                case "volume":
-                                    beerObject.volume = value as? String
-                                default:
-                                    print("could not recognize \(key): \(value)")
-                                    
-                                }
-                            }
-                            
-                            barObject.addToBeers(beerObject)
-                            DatabaseController.saveContext()
+                            self.getBeers(currentBar: barObject, beerAttributes: beerAttributes)
                         }
                     case "id":
                         print("id is \(barAttribute.value!)")
@@ -140,4 +101,47 @@ class FirebaseController {
     
     }
     
+    func getBeers(currentBar: Bar, beerAttributes: Dictionary<String, Any>) {
+        
+        let beerClassName:String = String(describing: Beer.self)
+        let beerObject: Beer = NSEntityDescription.insertNewObject(forEntityName: beerClassName, into: DatabaseController.getContext()) as! Beer
+        
+        for (key, value) in beerAttributes {
+            
+            switch key {
+            case "abv":
+                beerObject.abv = value as! Float
+            case "brewery":
+                beerObject.brewer = value as? String
+            case "country":
+                beerObject.country = value as? String
+            case "description":
+                beerObject.desc = value as? String
+            case "ibu":
+                beerObject.ibu = value as! Int16
+            case "id":
+                beerObject.id = value as! Int16
+            case "image":
+                beerObject.image = value as? String
+            case "name":
+                beerObject.name = value as? String
+            case "price":
+                beerObject.price = value as? String
+            case "recommended":
+                beerObject.recommended = value as! Bool
+            case "style":
+                beerObject.style = value as? String
+            case "type":
+                beerObject.type = value as? String
+            case "volume":
+                beerObject.volume = value as? String
+            default:
+                print("could not recognize \(key): \(value)")
+                
+            }
+        }
+        
+        currentBar.addToBeers(beerObject)
+        DatabaseController.saveContext()
+    }
 }

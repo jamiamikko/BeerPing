@@ -24,6 +24,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     let region1 = CLBeaconRegion.init(proximityUUID: NSUUID(uuidString: "824EDFBF-874E-4D14-A8B6-065D8730E867")! as UUID, identifier: "William K, Sello")
     
+    let firebController: FirebaseController = FirebaseController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         UNUserNotificationCenter.current().delegate = self
         
-        //getFirstLocation()
+        firebController.getBars()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
