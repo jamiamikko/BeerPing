@@ -12,19 +12,17 @@
 		7D4DA09EFDFA9C8CCFC35792 /* Pods_BeerPing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4930276AFE96E5F236474462 /* Pods_BeerPing.framework */; };
 		BC3E3D061ECF0227001EA44E /* FirebaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E3D051ECF0227001EA44E /* FirebaseObserver.swift */; };
 		BC44F5B21EA76AEA00F20AB0 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC44F5B11EA76AEA00F20AB0 /* BeerViewController.swift */; };
+		BC53F3B91EEA84B700C6233A /* Bar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53F3B51EEA84B700C6233A /* Bar+CoreDataClass.swift */; };
+		BC53F3BA1EEA84B700C6233A /* Bar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53F3B61EEA84B700C6233A /* Bar+CoreDataProperties.swift */; };
+		BC53F3BB1EEA84B700C6233A /* Beer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53F3B71EEA84B700C6233A /* Beer+CoreDataClass.swift */; };
+		BC53F3BC1EEA84B700C6233A /* Beer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53F3B81EEA84B700C6233A /* Beer+CoreDataProperties.swift */; };
 		BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */; };
 		BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C5D1E924EA800CF0B57 /* ViewController.swift */; };
 		BC784C611E924EA800CF0B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C5F1E924EA800CF0B57 /* Main.storyboard */; };
 		BC784C631E924EA800CF0B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC784C621E924EA800CF0B57 /* Assets.xcassets */; };
 		BC784C661E924EA800CF0B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */; };
 		BC784C711E924EA800CF0B57 /* BeerPingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC784C701E924EA800CF0B57 /* BeerPingTests.swift */; };
-		BCBBD6031ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD5FD1ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift */; };
-		BCBBD6041ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD5FE1ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift */; };
-		BCBBD6051ED6A9EB00498181 /* Bar+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD5FF1ED6A9EB00498181 /* Bar+CoreDataClass.swift */; };
-		BCBBD6061ED6A9EB00498181 /* Bar+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD6001ED6A9EB00498181 /* Bar+CoreDataProperties.swift */; };
-		BCBBD6071ED6A9EB00498181 /* Beer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD6011ED6A9EB00498181 /* Beer+CoreDataClass.swift */; };
-		BCBBD6081ED6A9EB00498181 /* Beer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBBD6021ED6A9EB00498181 /* Beer+CoreDataProperties.swift */; };
-		BCCB21EE1ECCCC7200016CBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */; };
+		BCA7087F1EEA821F004A09E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCA7087E1EEA821F004A09E0 /* GoogleService-Info.plist */; };
 		BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */; };
 		BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */; };
 		BCDC64A71E9CD140009F2A06 /* BarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC64A61E9CD140009F2A06 /* BarTableViewController.swift */; };
@@ -52,6 +50,10 @@
 		A3070754E7A3E3561766DCB2 /* Pods-BeerPing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerPing.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerPing/Pods-BeerPing.release.xcconfig"; sourceTree = "<group>"; };
 		BC3E3D051ECF0227001EA44E /* FirebaseObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseObserver.swift; sourceTree = "<group>"; };
 		BC44F5B11EA76AEA00F20AB0 /* BeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
+		BC53F3B51EEA84B700C6233A /* Bar+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataClass.swift"; path = "../Bar+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BC53F3B61EEA84B700C6233A /* Bar+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataProperties.swift"; path = "../Bar+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BC53F3B71EEA84B700C6233A /* Beer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataClass.swift"; path = "../Beer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BC53F3B81EEA84B700C6233A /* Beer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataProperties.swift"; path = "../Beer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC784C581E924EA800CF0B57 /* BeerPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C5B1E924EA800CF0B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC784C5D1E924EA800CF0B57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,13 +64,7 @@
 		BC784C6C1E924EA800CF0B57 /* BeerPingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerPingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC784C701E924EA800CF0B57 /* BeerPingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPingTests.swift; sourceTree = "<group>"; };
 		BC784C721E924EA800CF0B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCBBD5FD1ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataClass.swift"; path = "../CurrentVersion+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BCBBD5FE1ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CurrentVersion+CoreDataProperties.swift"; path = "../CurrentVersion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BCBBD5FF1ED6A9EB00498181 /* Bar+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataClass.swift"; path = "../Bar+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BCBBD6001ED6A9EB00498181 /* Bar+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bar+CoreDataProperties.swift"; path = "../Bar+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BCBBD6011ED6A9EB00498181 /* Beer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataClass.swift"; path = "../Beer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BCBBD6021ED6A9EB00498181 /* Beer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Beer+CoreDataProperties.swift"; path = "../Beer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BCA7087E1EEA821F004A09E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCD7E7E21E9B952100490E66 /* BeerPing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeerPing.xcdatamodel; sourceTree = "<group>"; };
 		BCD7E7EA1E9B971C00490E66 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		BCDC64A61E9CD140009F2A06 /* BarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarTableViewController.swift; sourceTree = "<group>"; };
@@ -121,12 +117,10 @@
 		BC3E48371E9E07C90007A0DB /* EntityClasses */ = {
 			isa = PBXGroup;
 			children = (
-				BCBBD5FD1ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift */,
-				BCBBD5FE1ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift */,
-				BCBBD5FF1ED6A9EB00498181 /* Bar+CoreDataClass.swift */,
-				BCBBD6001ED6A9EB00498181 /* Bar+CoreDataProperties.swift */,
-				BCBBD6011ED6A9EB00498181 /* Beer+CoreDataClass.swift */,
-				BCBBD6021ED6A9EB00498181 /* Beer+CoreDataProperties.swift */,
+				BC53F3B51EEA84B700C6233A /* Bar+CoreDataClass.swift */,
+				BC53F3B61EEA84B700C6233A /* Bar+CoreDataProperties.swift */,
+				BC53F3B71EEA84B700C6233A /* Beer+CoreDataClass.swift */,
+				BC53F3B81EEA84B700C6233A /* Beer+CoreDataProperties.swift */,
 			);
 			name = EntityClasses;
 			sourceTree = "<group>";
@@ -169,8 +163,8 @@
 				BC784C621E924EA800CF0B57 /* Assets.xcassets */,
 				BC784C671E924EA800CF0B57 /* Info.plist */,
 				BC784C641E924EA800CF0B57 /* LaunchScreen.storyboard */,
+				BCA7087E1EEA821F004A09E0 /* GoogleService-Info.plist */,
 				BCD7E7E11E9B952100490E66 /* BeerPing.xcdatamodeld */,
-				BCCB21ED1ECCCC7200016CBE /* GoogleService-Info.plist */,
 			);
 			path = BeerPing;
 			sourceTree = "<group>";
@@ -275,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC784C661E924EA800CF0B57 /* LaunchScreen.storyboard in Resources */,
-				BCCB21EE1ECCCC7200016CBE /* GoogleService-Info.plist in Resources */,
+				BCA7087F1EEA821F004A09E0 /* GoogleService-Info.plist in Resources */,
 				BC784C631E924EA800CF0B57 /* Assets.xcassets in Resources */,
 				BC784C611E924EA800CF0B57 /* Main.storyboard in Resources */,
 			);
@@ -388,22 +382,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC53F3BC1EEA84B700C6233A /* Beer+CoreDataProperties.swift in Sources */,
 				BC784C5E1E924EA800CF0B57 /* ViewController.swift in Sources */,
-				BCBBD6061ED6A9EB00498181 /* Bar+CoreDataProperties.swift in Sources */,
-				BCBBD6041ED6A9EB00498181 /* CurrentVersion+CoreDataProperties.swift in Sources */,
 				BCD7E7E31E9B952100490E66 /* BeerPing.xcdatamodeld in Sources */,
-				BCBBD6031ED6A9EB00498181 /* CurrentVersion+CoreDataClass.swift in Sources */,
-				BCBBD6071ED6A9EB00498181 /* Beer+CoreDataClass.swift in Sources */,
 				BC3E3D061ECF0227001EA44E /* FirebaseObserver.swift in Sources */,
+				BC53F3BB1EEA84B700C6233A /* Beer+CoreDataClass.swift in Sources */,
 				BC784C5C1E924EA800CF0B57 /* AppDelegate.swift in Sources */,
 				BC44F5B21EA76AEA00F20AB0 /* BeerViewController.swift in Sources */,
 				6AEA25AD1E9CCE8500FCBE6E /* MapAnnotation.swift in Sources */,
 				BCDC64A91E9CD2CE009F2A06 /* BarTableViewCell.swift in Sources */,
+				BC53F3B91EEA84B700C6233A /* Bar+CoreDataClass.swift in Sources */,
 				BCDC64AF1E9CF6FF009F2A06 /* BeerTableViewCell.swift in Sources */,
 				BCD7E7EB1E9B971C00490E66 /* DatabaseController.swift in Sources */,
-				BCBBD6051ED6A9EB00498181 /* Bar+CoreDataClass.swift in Sources */,
 				BCDC64A71E9CD140009F2A06 /* BarTableViewController.swift in Sources */,
-				BCBBD6081ED6A9EB00498181 /* Beer+CoreDataProperties.swift in Sources */,
+				BC53F3BA1EEA84B700C6233A /* Bar+CoreDataProperties.swift in Sources */,
 				BCDC64AB1E9CF4A6009F2A06 /* BeerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

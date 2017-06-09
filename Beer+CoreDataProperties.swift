@@ -2,7 +2,7 @@
 //  Beer+CoreDataProperties.swift
 //  
 //
-//  Created by Mikko Jämiä on 25/05/2017.
+//  Created by Mikko Jämiä on 09/06/2017.
 //
 //
 

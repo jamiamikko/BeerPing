@@ -6,6 +6,7 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="beers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Beer" inverseName="bar" inverseEntity="Beer" syncable="YES"/>
     </entity>
@@ -25,12 +26,8 @@
         <attribute name="volume" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bar" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Bar" inverseName="beers" inverseEntity="Bar" syncable="YES"/>
     </entity>
-    <entity name="CurrentVersion" representedClassName=".CurrentVersion" syncable="YES">
-        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="Bar" positionX="-1773" positionY="-1035" width="128" height="150"/>
+        <element name="Bar" positionX="-1773" positionY="-1035" width="128" height="165"/>
         <element name="Beer" positionX="-1532" positionY="-1062" width="128" height="253"/>
-        <element name="CurrentVersion" positionX="-1773" positionY="-814" width="128" height="58"/>
     </elements>
 </model>

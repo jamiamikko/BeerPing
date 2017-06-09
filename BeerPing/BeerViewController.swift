@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class BeerViewController: UIViewController {
-
+    
     @IBOutlet weak var beerName: UILabel!
     @IBOutlet weak var brewery: UILabel!
     @IBOutlet weak var style: UILabel!
@@ -19,22 +21,27 @@ class BeerViewController: UIViewController {
     @IBOutlet weak var flagImage: UIImageView!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    var imageURL: String = ""
-    var flagURL: String = ""
+    
     var beerLabelText = "Voeh"
     var beerList:Array <Beer> = []
     
     override func viewDidLoad() {
         
+        
+        let storage = FIRStorage.storage()
+        
+        let barRef = storage.reference().child("beers")
+        let flagRef = storage.reference().child("flags")
+        
         super.viewDidLoad()
-
+        
         let filteredBeers = beerList.filter( { return $0.name == beerLabelText } )
         
-        imageURL = "http://users.metropolia.fi/~ottoja/beerbluds/images/" + filteredBeers[0].image!
-        flagURL = "http://users.metropolia.fi/~ottoja/beerbluds/images/" + filteredBeers[0].country!
-                
-        getImage(imageURL, imageView)
-        getImage(flagURL, flagImage)
+        let imageURL = barRef.child("\(filteredBeers[0].image!)")
+        let flagURL = flagRef.child("\(filteredBeers[0].country!)")
+        
+        getImage(imageURL: imageURL, imageView: imageView)
+        getImage(imageURL: flagURL, imageView: flagImage)
         
         beerName.text = filteredBeers[0].name
         brewery.text = filteredBeers[0].brewer!
@@ -44,31 +51,30 @@ class BeerViewController: UIViewController {
         ibu.text = String(filteredBeers[0].ibu)
         price.text = String(describing: filteredBeers[0].price!) + "/" + filteredBeers[0].volume!
     }
-
-    func getImage (_  url_str: String, _ imageView: UIImageView) {
+    
+    func getImage (imageURL: FIRStorageReference, imageView: UIImageView) {
         
-        let url: URL = URL(string: url_str)!
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: url, completionHandler: {
-            (data, response ,error) in
-            
-            if data != nil {
-                let image = UIImage(data: data!)
-                
-                if(image != nil) {
-                    DispatchQueue.main.async(execute: {
-                        
-                        imageView.image = image
-                        imageView.alpha = 0
-                        
-                        UIView.animate(withDuration: 2.5, animations: {
-                            imageView.alpha = 1.0
+        imageURL.data(withMaxSize: 1 * 1024 * 1024) { data, error in
+            if error != nil {
+            } else {
+                if data != nil {
+                    let image = UIImage(data: data!)
+                    
+                    if(image != nil) {
+                        DispatchQueue.main.async(execute: {
+                            
+                            imageView.image = image
+                            imageView.alpha = 0
+                             
+                             UIView.animate(withDuration: 1.5, animations: {
+                                imageView.alpha = 1.0
+                             })
+                            
                         })
-                    })
+                        
+                    }
                 }
             }
-        })
-        task.resume()
+        }
     }
 }

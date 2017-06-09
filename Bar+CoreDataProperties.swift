@@ -2,7 +2,7 @@
 //  Bar+CoreDataProperties.swift
 //  
 //
-//  Created by Mikko Jämiä on 25/05/2017.
+//  Created by Mikko Jämiä on 09/06/2017.
 //
 //
 
@@ -21,6 +21,7 @@ extension Bar {
     @NSManaged public var location: String?
     @NSManaged public var longitude: Double
     @NSManaged public var name: String?
+    @NSManaged public var type: String?
     @NSManaged public var uuid: String?
     @NSManaged public var beers: NSSet?
 

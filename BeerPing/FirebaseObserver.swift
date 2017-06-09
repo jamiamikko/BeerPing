@@ -80,6 +80,9 @@ class FirebaseObserver {
                     case "uuid":
                         barObject.uuid = barAttribute.value as? String
                         
+                    case "type":
+                        barObject.type = barAttribute.value as? String
+                        
                     default:
                         print("could not recognize \(barAttribute.key): \(barAttribute.value!)")
                     }
